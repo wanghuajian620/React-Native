@@ -10,13 +10,31 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
 
+import { SearchBar } from 'react-native-elements';
+
 export default class App extends Component {
+  state = {
+    search: '',
+  };
+  updateSearch = search => {
+    this.setState({search});
+  }
   render() {
+    const { search } = this.state; 
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
-        <Text style={styles.instructions}>To get started, edit App.js</Text>
-        <Text style={styles.instructions}>{instructions}</Text>
+        <View style={styles.search}>
+          <SearchBar
+            placeholder="Type Here..."
+            onChangeText={this.updateSearch}
+            value={search}
+            round
+          /> 
+        </View>
+        <View>
+          <Text style={styles.welcome}>七月的风  八月的雨</Text>
+          <Text style={styles.instructions}>卑微的我喜欢遥远的你</Text>
+        </View>
       </View>
     );
   }
@@ -25,9 +43,11 @@ export default class App extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
     backgroundColor: '#F5FCFF',
+  },
+  search: {
+    marginTop: 30,
+    color: '#fff'
   },
   welcome: {
     fontSize: 20,
