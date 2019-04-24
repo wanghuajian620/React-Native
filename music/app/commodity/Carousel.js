@@ -17,11 +17,13 @@ export default class Carousel extends React.Component {
       currentPage: 0,
       imageArray: [
         {
-          uri: 'https://images.pexels.com/photos/2110937/pexels-photo-2110937.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'
+          uri: 'https://images.pexels.com/photos/298863/pexels-photo-298863.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'
         },{
-          uri: 'https://images.pexels.com/photos/2120084/pexels-photo-2120084.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'
+          uri: 'https://images.pexels.com/photos/1050244/pexels-photo-1050244.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'
         },{
-          uri: 'https://images.pexels.com/photos/2118174/pexels-photo-2118174.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'
+          uri: 'https://images.pexels.com/photos/709817/pexels-photo-709817.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'
+        }, {
+          uri: 'https://images.pexels.com/photos/1426191/pexels-photo-1426191.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'
         }
       ]
     };
@@ -38,7 +40,7 @@ export default class Carousel extends React.Component {
   _startTimer () {
     this.interval = setInterval(() => {
       nextPage = this.state.currentPage + 1;
-      if (nextPage >= 3) {
+      if (nextPage >= 4) {
         nextPage = 0
       };
       this.setState({currentPage: nextPage});
