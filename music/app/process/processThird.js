@@ -1,7 +1,7 @@
 /**
  *    Revision    History:
  *     Initial:    2019/04/26          Author:   Wang Huajian
- *     简短介绍: 此页是长列表 FlatList 以及 RefreshControl 的详细使用
+ *     简短介绍: 此页是长列表 FlatList 以及 ActivityIndicator 的详细使用
  */
 
 import React from 'react';
@@ -57,6 +57,16 @@ export default class LongList extends React.Component {
       />
     );
   }
+
+  // renderLoadingView() {
+  //   return (
+  //     <View style={styles.container}>
+  //       <Text>
+  //         正在加载电影数据……
+  //       </Text>
+  //     </View>
+  //   );
+  // }
 
   renderMovie({ item }) {
     return (
