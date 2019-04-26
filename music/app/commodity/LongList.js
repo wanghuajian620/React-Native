@@ -5,7 +5,7 @@
  */
 
 import React from 'react';
-import { View, Image, Text, StyleSheet, FlatList, ActivityIndicator } from 'react-native';
+import { View, Image, Text, StyleSheet, FlatList, ActivityIndicator, RefreshControl } from 'react-native';
 
 var movie_api = 'https://raw.githubusercontent.com/facebook/react-native/0.51-stable/docs/MoviesExample.json';
 
@@ -14,7 +14,8 @@ export default class LongList extends React.Component {
     super(props);
     this.state = {
       data: [],
-      loaded: false
+      loaded: false,
+      isRefreshing: false
     }
     this.fetchData = this.fetchData.bind(this);
   }
@@ -54,8 +55,46 @@ export default class LongList extends React.Component {
         renderItem={this.renderMovie}
         keyExtractor={item => item.id}
         style={styles.list}
+        refreshControl={this._renderRefreshControl()}
       />
     );
+  }
+
+  _renderRefreshControl () {
+    return (
+      <RefreshControl
+        refreshing={this.state.isRefreshing}
+        tintColor={'#FF0000'}
+        title={'正在刷新数据，请稍后...'}
+        titleColor={'#0000FF'} 
+        onRefresh={this._onRefresh} // 刷新时调用onRefresh方法
+      />
+    );
+  }
+ 
+  _onRefresh = () => {
+    this.setState({isRefreshing: true});
+
+    setTimeout(() => {
+      const refresh_movie = [{
+        posters: { thumbnail: 'https://images.pexels.com/photos/793166/pexels-photo-793166.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500' },
+        title: '死数据',
+        year: '2019年'
+      },{
+        posters: {thumbnail: 'https://images.pexels.com/photos/2174209/pexels-photo-2174209.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500' },
+        title: '死数据',
+        year: '2019年'
+      },{
+        posters: {thumbnail: 'https://images.pexels.com/photos/2179689/pexels-photo-2179689.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500' },
+        title: '死数据',
+        year: '2019年'
+      },{
+        posters: {thumbnail: 'https://images.pexels.com/photos/2121862/pexels-photo-2121862.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500' },
+        title: '死数据',
+        year: '2019年'
+      }]
+      this.setState({isRefreshing: false, data: refresh_movie})
+    }, 2000);
   }
 
   renderMovie({ item }) {
