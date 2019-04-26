@@ -23,7 +23,6 @@ export default class Commodity extends React.Component {
         <Search />
         <Carousel />
         <LongList />
-
       </View>
     );
   }
