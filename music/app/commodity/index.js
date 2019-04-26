@@ -1,13 +1,14 @@
 /**
  * Revision History
- *    Initial:     2019/04/23         Wang Huajian
+ *    Initial:     2019/04/23         Author:  Wang Huajian
  */
 
 import React from 'react';
-import { View, StyleSheet, TextInput, Button, Platform, ScrollView, Dimensions, Image, Alert } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 
 import Search from './Search';
 import Carousel from './Carousel';
+import LongList from './LongList';
 
 export default class Commodity extends React.Component {
 
@@ -21,6 +22,7 @@ export default class Commodity extends React.Component {
       <View style={styles.container}>
         <Search />
         <Carousel />
+        <LongList />
 
       </View>
     );

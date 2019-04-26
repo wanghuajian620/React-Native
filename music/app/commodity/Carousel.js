@@ -1,6 +1,6 @@
 /**
  *   Revision   History:
- *      Initial:         2019/04/24       Wang  Huajian
+ *      Initial:         2019/04/24       Author:  Wang  Huajian
  *      简短介绍 此页是轮播图，供index.js引用。
  */
 
@@ -30,11 +30,11 @@ export default class Carousel extends React.Component {
   }
 
   componentDidMount() {
-    this._startTimer()
+    this._startTimer()              // 页面渲染完成后调用定时器
   }
 
   componentWillUnmount() {
-    clearInterval(this.interval)
+    clearInterval(this.interval)   // 清除定时器
   }
 
   _startTimer () {
@@ -45,7 +45,7 @@ export default class Carousel extends React.Component {
       };
       this.setState({currentPage: nextPage});
       const offSetX = nextPage * Dimensions.get('screen').width;
-      this.refs.scrollView.scrollTo({x: offSetX, y: 0, animated: true});
+      this.refs.scrollView.scrollTo({x: offSetX, y: 0, animated: true});  // 调用ScrollView组件的实例方法scrollTo
     }, 2000)
   }
 

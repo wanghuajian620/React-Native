@@ -1,6 +1,6 @@
 /**
  *   Revision   History:
- *      Initial:         2019/04/24       Wang  Huajian
+ *      Initial:         2019/04/24       Author:   Wang  Huajian
  *      简短介绍 此页是顶部搜索，供index.js引用。
  */
 
