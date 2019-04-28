@@ -75,7 +75,7 @@ export default class LongList extends React.Component {
   _onRefresh = () => {
     this.setState({isRefreshing: true});
 
-    setTimeout(() => { // 在生产中，这里是要请求新的接口，然后数据能放在一个数据库，这样，我们新旧数据都可看到。
+    setTimeout(() => { // 在生产中，这里是要请求新的接口，然后数据能放在一个数据库，这样，我们新旧数据都可看到。 
       const refresh_movie = [{
         posters: { thumbnail: 'https://images.pexels.com/photos/793166/pexels-photo-793166.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500' },
         title: '死数据',
