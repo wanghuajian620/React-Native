@@ -5,19 +5,23 @@
 
 import React from 'react';
 import { StyleSheet } from 'react-native';
-import { Header, Content, Item, Input, Icon } from 'native-base';
+import { Header, Content, Item, Input, Icon, Form, Label } from 'native-base';
 
 export default class Login extends React.Component {
   render() {
     return (
         <Content>
-          <Item>
-            <Input placeholder='username'/>
-          </Item>
-          <Item>
-            <Input placeholder='password'/>
-            <Icon active name='lock' />
-          </Item>
+          <Form>
+            <Item inlineLabel>
+              <Label>账号</Label>
+              <Input />
+            </Item>
+            <Item inlineLabel>
+              <Label>密码</Label>
+              <Input />
+              <Icon type='Ionicons' name='ios-eye' />
+            </Item>
+          </Form>
         </Content>
     );
   }
