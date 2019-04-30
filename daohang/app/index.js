@@ -18,7 +18,7 @@ const First_Stack = createBottomTabNavigator({
     screen: Home,
     navigationOptions: {
       tabBarLabel: '首页'
-  },
+    },
   },
   Setting: {
     screen: Setting,

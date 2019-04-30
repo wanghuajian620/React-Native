@@ -5,12 +5,11 @@
 
 import React from 'react';
 import { StyleSheet } from 'react-native';
-import { Container, Header, Content, Item, Input, Icon } from 'native-base';
+import { Header, Content, Item, Input, Icon } from 'native-base';
 
 export default class Login extends React.Component {
   render() {
     return (
-      // <Container>
         <Content>
           <Item>
             <Input placeholder='username'/>
@@ -20,7 +19,6 @@ export default class Login extends React.Component {
             <Icon active name='lock' />
           </Item>
         </Content>
-      // </Container>
     );
   }
 }
