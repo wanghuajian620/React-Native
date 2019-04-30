@@ -4,7 +4,7 @@
  */
 
 import {AppRegistry} from 'react-native';
-import Commodity from './app/commodity/index';
+import SSS from './app/router/tabnavigation';
 import {name as appName} from './app.json';
 
-AppRegistry.registerComponent(appName, () => Commodity);
+AppRegistry.registerComponent(appName, () => SSS);

@@ -26,7 +26,7 @@ export default class Search extends React.Component {
 
 const styles = StyleSheet.create({
   searchbar: {
-    marginTop: Platform.OS === 'ios' ? 36 : 0, // ios、android 对状态栏的处理方式不同 
+    marginTop: Platform.OS === 'ios' ? 10 : 0, // ios、android 对状态栏的处理方式不同 
     height: 40,
     flexDirection: 'row',
   },
