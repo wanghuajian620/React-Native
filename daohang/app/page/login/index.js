@@ -5,7 +5,8 @@
 
 import React from 'react';
 import { StyleSheet } from 'react-native';
-import { Header, Content, Item, Input, Icon, Form, Label } from 'native-base';
+import { Header, Content, Item, Input, Form, Label } from 'native-base';
+import Icon from 'react-native-vector-icons/Feather';
 
 export default class Login extends React.Component {
   render() {
@@ -19,7 +20,7 @@ export default class Login extends React.Component {
             <Item inlineLabel>
               <Label>密码</Label>
               <Input />
-              <Icon type='Ionicons' name='ios-eye' />
+              <Icon name='unlock' size={30} />
             </Item>
           </Form>
         </Content>

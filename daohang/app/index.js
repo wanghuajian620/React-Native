@@ -11,9 +11,6 @@ import Home from '../app/page/home';
 import Setting from '../app/page/setting';
 
 const First_Stack = createBottomTabNavigator({
-  Login: {
-    screen: Login,
-  },
   Home: {
     screen: Home,
     navigationOptions: {
@@ -31,7 +28,8 @@ const First_Stack = createBottomTabNavigator({
 })
 
 const MyAPP = createStackNavigator({
-  Login: {screen: First_Stack},
+  Login: {screen: Login},
+  Tab: {screen: First_Stack},
 },{
   initialRouteName: "Login"
 });
