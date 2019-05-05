@@ -7,6 +7,8 @@ import React from 'react';
 import { createBottomTabNavigator, createStackNavigator, createAppContainer } from 'react-navigation';
 
 import Login from '../app/page/login';
+import Signup from '../app/page/signup';
+import Password from '../app/page/password';
 import Home from '../app/page/home';
 import Setting from '../app/page/setting';
 
@@ -30,6 +32,8 @@ const First_Stack = createBottomTabNavigator({
 
 const MyAPP = createStackNavigator({
   Login: {screen: Login},
+  Signup: {screen: Signup},
+  Password: {screen: Password},
   Tab: {screen: First_Stack},
 },{
   initialRouteName: "Login"

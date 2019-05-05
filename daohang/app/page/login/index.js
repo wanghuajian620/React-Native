@@ -12,6 +12,9 @@ const height = Dimensions.get('screen').height;
 const width = Dimensions.get('screen').width;
 
 export default class Login extends Component {
+  static navigationOptions = {
+    header: null
+  }
   constructor(props) {
     super(props);
 
@@ -31,22 +34,22 @@ export default class Login extends Component {
         <StatusBar hidden={false} backgroundColor='white' />
         
         <View style={styles.content}>
-          <View style={{ flexDirection: 'row', alignItems: 'center', borderBottomColor: "#dddddd", borderBottomWidth: 1 }}>
+          <View style={{ flexDirection: 'row', alignItems: 'center', borderBottomColor: "#80989b", borderBottomWidth: 1 }}>
             <Text style={{ color: '#323232', paddingRight: 10 }}>账号</Text>
             <Input
               keyboardType='email-address'
               placeholder='请输入手机号或账号'
-              placeholderTextColor='#dddddd'
+              placeholderTextColor='#eaf4fc'
               onChangeText={account => this.setState({ account })}
             />
           </View>
-          <View style={{ flexDirection: 'row', alignItems: 'center', borderBottomColor: "#dddddd", borderBottomWidth: 1, marginVertical: 10 }}>
+          <View style={{ flexDirection: 'row', alignItems: 'center', borderBottomColor: "#80989b", borderBottomWidth: 1, marginVertical: 10 }}>
             <Text style={{ color: '#323232', paddingRight: 10 }}>密码</Text>
             <Input
               keyboardType={!this.state.pwVisible ? 'default' : 'email-address'}
               secureTextEntry={!this.state.pwVisible}
               placeholder='请输入密码'
-              placeholderTextColor='#dddddd'
+              placeholderTextColor='#eaf4fc'
               onChangeText={password => this.setState({ password })}
             />
             <TouchableOpacity
@@ -101,6 +104,6 @@ const styles = {
     height: height,
     width: width,
     paddingHorizontal: 50,
-    marginTop: -60
+    // marginTop: -60
   }
 };
