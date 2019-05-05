@@ -4,7 +4,7 @@
  */
 
 import React, { Component } from 'react';
-import { View, Dimensions, TouchableOpacity, StatusBar } from 'react-native';
+import { View, Dimensions, TouchableOpacity, StatusBar, ImageBackground } from 'react-native';
 import { Input, Text } from 'native-base';
 import Icon from 'react-native-vector-icons/Ionicons';
 
@@ -24,13 +24,14 @@ export default class Login extends Component {
 
   render() {
     return (
-      <View
-        style={{ height, width, backgroundColor: 'white' }}
+      <ImageBackground
+        source={{ uri: 'https://cdn.magdeleine.co/wp-content/uploads/2019/04/tumblr_og2ppfmQNq1tomxvuo8_1280.jpg'}}
+        style={{ height, width }}
       >
         <StatusBar hidden={false} backgroundColor='white' />
         
         <View style={styles.content}>
-          <View style={{ flexDirection: 'row', alignItems: 'center', borderBottomColor: "#f6f8fa", borderBottomWidth: 1 }}>
+          <View style={{ flexDirection: 'row', alignItems: 'center', borderBottomColor: "#dddddd", borderBottomWidth: 1 }}>
             <Text style={{ color: '#323232', paddingRight: 10 }}>账号</Text>
             <Input
               keyboardType='email-address'
@@ -39,7 +40,7 @@ export default class Login extends Component {
               onChangeText={account => this.setState({ account })}
             />
           </View>
-          <View style={{ flexDirection: 'row', alignItems: 'center', borderBottomColor: "#f6f8fa", borderBottomWidth: 1, marginVertical: 10 }}>
+          <View style={{ flexDirection: 'row', alignItems: 'center', borderBottomColor: "#dddddd", borderBottomWidth: 1, marginVertical: 10 }}>
             <Text style={{ color: '#323232', paddingRight: 10 }}>密码</Text>
             <Input
               keyboardType={!this.state.pwVisible ? 'default' : 'email-address'}
@@ -66,7 +67,7 @@ export default class Login extends Component {
           <TouchableOpacity
             activeOpacity={this.state.account && this.state.password ? 0.7 : 1}
             style={{
-              backgroundColor: this.state.account && this.state.password ? '#00BFFF' : '#dddddd',
+              backgroundColor: this.state.account && this.state.password ? '#5c9291' : '#dddddd',
               paddingVertical: 10,
               borderRadius: 10,
               width: width - 100,
@@ -87,7 +88,7 @@ export default class Login extends Component {
             </TouchableOpacity>
           </View>
         </View>
-      </View>
+      </ImageBackground>
     );
   }
 }

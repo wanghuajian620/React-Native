@@ -37,7 +37,7 @@ const MyAPP = createStackNavigator({
 
 const APP = createAppContainer(MyAPP);
 
-export default class SSS extends React.Component {
+export default class DaoHang extends React.Component {
   render() {
     return (
       <APP />
