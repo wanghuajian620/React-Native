@@ -6,6 +6,7 @@
 import React, { Component } from 'react';
 import { View, Dimensions, TouchableOpacity, StatusBar } from 'react-native';
 import { Input, Text } from 'native-base';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 const height = Dimensions.get('screen').height;
 const width = Dimensions.get('screen').width;
@@ -47,8 +48,21 @@ export default class Login extends Component {
               placeholderTextColor='#dddddd'
               onChangeText={password => this.setState({ password })}
             />
+            <TouchableOpacity
+              onPress={() => {
+                this.setState({ pwVisible: !this.state.pwVisible })
+              }}
+              activeOpacity={0.8}
+            >
+              {
+                this.state.pwVisible ?
+                  <Icon name='ios-unlock' size={24} color='#dddddd' />
+                  :
+                  <Icon name='ios-lock' size={24} color='#dddddd' />
+              }
+            </TouchableOpacity>
           </View>
-          
+
           <TouchableOpacity
             activeOpacity={this.state.account && this.state.password ? 0.7 : 1}
             style={{
