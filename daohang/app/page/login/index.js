@@ -15,6 +15,7 @@ export default class Login extends Component {
   static navigationOptions = {
     header: null
   }
+
   constructor(props) {
     super(props);
 
@@ -37,7 +38,7 @@ export default class Login extends Component {
           <View style={{ flexDirection: 'row', alignItems: 'center', borderBottomColor: "#80989b", borderBottomWidth: 1 }}>
             <Text style={{ color: '#323232', paddingRight: 10 }}>账号</Text>
             <Input
-              keyboardType='email-address'
+              keyboardType='default'
               placeholder='请输入手机号或账号'
               placeholderTextColor='#eaf4fc'
               onChangeText={account => this.setState({ account })}
@@ -70,7 +71,7 @@ export default class Login extends Component {
           <TouchableOpacity
             activeOpacity={this.state.account && this.state.password ? 0.7 : 1}
             style={{
-              backgroundColor: this.state.account && this.state.password ? '#5c9291' : '#dddddd',
+              backgroundColor: this.state.account && this.state.password ? '#5c9291' : '#6c848d',
               paddingVertical: 10,
               borderRadius: 10,
               width: width - 100,
@@ -104,6 +105,5 @@ const styles = {
     height: height,
     width: width,
     paddingHorizontal: 50,
-    // marginTop: -60
   }
 };
