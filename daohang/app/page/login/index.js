@@ -6,7 +6,7 @@
 import React, { Component } from 'react';
 import { View, Dimensions, TouchableOpacity, StatusBar, ImageBackground } from 'react-native';
 import { Input, Text } from 'native-base';
-import Icon from 'react-native-vector-icons/Ionicons';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 const height = Dimensions.get('screen').height;
 const width = Dimensions.get('screen').width;
@@ -61,9 +61,9 @@ export default class Login extends Component {
             >
               {
                 this.state.pwVisible ?
-                  <Icon name='ios-unlock' size={24} color='#dddddd' />
+                  <Ionicons name='ios-unlock' size={24} color='#dddddd' />
                   :
-                  <Icon name='ios-lock' size={24} color='#dddddd' />
+                  <Ionicons name='ios-lock' size={24} color='#dddddd' />
               }
             </TouchableOpacity>
           </View>
