@@ -25,6 +25,7 @@ const First_Stack = createBottomTabNavigator({
   }
 }, {
   tabBarPosition: 'bottom',
+  navigationOptions: {header: null}
 })
 
 const MyAPP = createStackNavigator({
