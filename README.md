@@ -5,7 +5,6 @@
   <img width="250" height="450" src="https://github.com/wanghuajian620/React-Native/blob/master/daohang/screenimages/login.png"/>
   <img width="250" height="450" src="https://github.com/wanghuajian620/React-Native/blob/master/daohang/screenimages/login1.png"/>
   <img width="250" height="450" src="https://github.com/wanghuajian620/React-Native/blob/master/daohang/screenimages/home.png"/>
-  <img width="250" height="450" src="https://github.com/wanghuajian620/React-Native/blob/master/daohang/screenimages/setting.png"/>
   
 + music
   + 轮播图的实现（不引入第三方库），通过rn组件 ScrollView + 定时器 结合着组件的生命周期实现
