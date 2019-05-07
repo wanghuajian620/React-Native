@@ -23,3 +23,14 @@
   <img width="250" height="450" src="https://github.com/wanghuajian620/React-Native/blob/master/music/app/shoppingcart/refreshed.png"/>
 + traveller
   + 结合dva的rn应用 
+
+  <img width="250" height="450" src="https://github.com/wanghuajian620/React-Native/blob/master/traveller/app/screenshoot/1.png"/>
+  <img width="250" height="450" src="https://github.com/wanghuajian620/React-Native/blob/master/traveller/app/screenshoot/2.png"/>
+  <img width="250" height="450" src="https://github.com/wanghuajian620/React-Native/blob/master/traveller/app/screenshoot/3.png"/>
+  <img width="250" height="450" src="https://github.com/wanghuajian620/React-Native/blob/master/traveller/app/screenshoot/4.png"/>
+  <img width="250" height="450" src="https://github.com/wanghuajian620/React-Native/blob/master/traveller/app/screenshoot/5.png"/>
+  <img width="250" height="450" src="https://github.com/wanghuajian620/React-Native/blob/master/traveller/app/screenshoot/6.png"/>
+  <img width="250" height="450" src="https://github.com/wanghuajian620/React-Native/blob/master/traveller/app/screenshoot/7.png"/>
+  <img width="250" height="450" src="https://github.com/wanghuajian620/React-Native/blob/master/traveller/app/screenshoot/8.png"/>
+  <img width="250" height="450" src="https://github.com/wanghuajian620/React-Native/blob/master/traveller/app/screenshoot/9.png"/>
+  
