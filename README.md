@@ -18,5 +18,8 @@
   + 上拉加载、下拉刷新  实则是在onReFresh的回调函数中请求新的接口，放到新的数组里，改变state中的初始值。
   + 导航（react-navigation 3.x）
   
+  <img width="250" height="450" src="https://github.com/wanghuajian620/React-Native/blob/master/music/app/shoppingcart/home.png"/>
+  <img width="250" height="450" src="https://github.com/wanghuajian620/React-Native/blob/master/music/app/shoppingcart/refresh.png"/>
+  <img width="250" height="450" src="https://github.com/wanghuajian620/React-Native/blob/master/music/app/shoppingcart/refreshed.png"/>
 + traveller
   + 结合dva的rn应用 
