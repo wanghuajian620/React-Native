@@ -6,8 +6,8 @@ import React from 'react';
 import { createBottomTabNavigator } from 'react-navigation';
 // import { Icon } from 'native-base';
 
-import Home from '../page/home';
-import Setting from '../page/setting';
+import Home from '../page/home/index';
+import Setting from '../page/setting/index';
 
 const First_Stack = createBottomTabNavigator({
   Home: {

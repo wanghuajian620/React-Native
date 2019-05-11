@@ -6,7 +6,7 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
  
-export default class Setting extends React.Component {
+class Setting extends React.Component {
   render() {
     return (
       <View style={styles.container}>
@@ -23,3 +23,5 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
 });
+
+export default Setting;
