@@ -1,4 +1,7 @@
 # React Native
++ alice
+  + 启动页的使用（Xcode 设置延时）
+  + 组件 Modal 的简单使用
 + daohang
   + react-navigation 3.x 的使用示例。
   
