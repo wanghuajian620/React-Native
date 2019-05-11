@@ -4,13 +4,16 @@
  */
 
 import React from 'react';
-import { StyleSheet, View, Text, Button, Modal, TouchableHighlight, Image } from 'react-native';
+import { StyleSheet, View, Button, Modal, Image } from 'react-native';
+
+import Color from '../../res/color';
+import Styles from '../../res/style';
 
 class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      modalVisible: false
+      modalVisible: false,
     }
   }
 
@@ -28,33 +31,29 @@ class Home extends React.Component {
     return (
       <View style={styles.container}>
         <View style={styles.contentStyle}>
-          <Text style={styles.contentTextStyle}>
-            ModalComp
-          </Text>
+          <Image style={styles.image} source={{uri: 'https://cdn.magdeleine.co/wp-content/uploads/2019/05/47021989662_5187bbbe62_o-1400x935.jpg'}}/>
           <Button
             title="打开Modal窗口"
-            color="#841584"
+            color={Color.buttonColor}
             onPress={this._openModalWin}
           />
         </View>
 
         <Modal
-          animationType='fade' // 指定了 modal 的动画类型。
-          transparent={false} // 背景是否透明，默认为白色，当为true时表示背景为透明。
-          visible={this.state.modalVisible} // 是否显示 modal 窗口
-          onRequestClose={() => { this._closeModalWin() }} // 回调会在用户按下 Android 设备上的后退按键或是 Apple TV 上的菜单键时触发。
-          onShow={()=>{console.log('modal窗口显示了');}} // 回调函数会在 modal 显示时调用
+          animationType='fade'
+          transparent={false}
+          visible={this.state.modalVisible}
+          onRequestClose={() => { this._closeModalWin() }}
         >
           <View style={styles.modalLayer}>
             <View style={styles.modalContainer}>
-              {/* <Text style={styles.modalTitleStyle}>这是个Modal窗口！</Text> */}
-              <Image style={styles.modalimage} source={{uri: 'https://imgs.xkcd.com/comics/alternative_energy_revolution.jpg'}} />
+            <Image style={styles.modalimage} source={{uri: 'https://imgs.xkcd.com/comics/alternative_energy_revolution.jpg'}} />
               <View style={styles.modalButtonStyle}>
-                <Button 
-                  title='取消' 
-                  color="#bf242a"
+                <Button
+                  title='关闭'
+                  color={Color.buttonColor}
                   onPress={this._closeModalWin}
-                ></Button>
+                />
               </View>
             </View>
           </View>
@@ -69,31 +68,32 @@ const styles = StyleSheet.create({
     flex: 1
   },
   contentStyle: {
-    padding:30
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingTop: Styles.Height(300)
   },
-  contentTextStyle: {
-    textAlign: 'center',
-    fontSize: 26
+  image: {
+    height: Styles.Height(300),
+    width: Styles.Width(300),
+    borderRadius: 5,
   },
   modalLayer: {
-    backgroundColor: 'rgba(0, 0, 0, 0.45)',
     flex: 1,
     justifyContent: 'center',
-    padding: 32
+    paddingTop: Styles.Height(50),
+    paddingRight: Styles.Width(50),
+    paddingBottom: Styles.Height(50),
+    paddingLeft: Styles.Width(50),
+    backgroundColor: Color.backgroundColor,
   },
   modalimage: {
-    height: 300,
-    backgroundColor: 'white',
-    justifyContent: 'center'
-  },
-  modalTitleStyle: {
-    textAlign: 'center',
-    fontSize: 26
+    height: Styles.Height(600),
+    borderRadius: 5,
+    justifyContent: 'center',
+    backgroundColor: Color.backgroundColor
   },
   modalButtonStyle: {
-    paddingLeft: 30,
-    paddingRight: 30,
-    marginTop: 10
+    marginTop: Styles.Height(14),
   }
 });
 
