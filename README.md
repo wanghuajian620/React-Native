@@ -2,6 +2,8 @@
 + alice
   + 启动页的使用（Xcode 设置延时）
   + 组件 Modal 的简单使用
+  + react-navigation 3.x 的使用
+  
 + daohang
   + react-navigation 3.x 的使用示例。
   
@@ -24,6 +26,7 @@
   <img width="250" height="450" src="https://github.com/wanghuajian620/React-Native/blob/master/music/app/shoppingcart/home.png"/>
   <img width="250" height="450" src="https://github.com/wanghuajian620/React-Native/blob/master/music/app/shoppingcart/refresh.png"/>
   <img width="250" height="450" src="https://github.com/wanghuajian620/React-Native/blob/master/music/app/shoppingcart/refreshed.png"/>
+  
 + traveller
   + 结合dva的rn应用 
 
