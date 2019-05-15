@@ -5,4 +5,12 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.Full" parent="AppTheme.NoActionBar">
+        <item name="android: windowFullscreen">true</item>
+    </style>
 </resources>
