@@ -4,6 +4,8 @@
   + 组件 Modal 的简单使用
   + react-navigation 3.x 的使用
   
+  <img width="350" height="350" src="https://github.com/wanghuajian620/React-Native/blob/master/alice/screenshots/interview.png"/>
+  
 + daohang
   + react-navigation 3.x 的使用示例。
   
