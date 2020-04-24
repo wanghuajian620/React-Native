@@ -1,0 +1,796 @@
+import React, { Component } from 'react';
+import { StyleSheet, View, Text, PixelRatio, Dimensions } from 'react-native';
+import ScrollView from 'cap4m/lib/ScrollView';
+import Button from 'cap4m/lib/Button';
+import TouchView from 'cap4m/lib/TouchView';
+import SectionListContacts from 'cap4m/lib/SectionListContacts';
+
+import ProxyFill from 'cap4m-observe';
+import _ from 'lodash';
+let $Page ={};
+var amVAR = {};
+const px2rn = px=>PixelRatio.roundToNearestPixel(px);
+const rem2rn = rem=>px2rn(rem*16);
+let {width, height } = Dimensions.get('window')
+var amVAR = {newData:[
+{
+key:'A',
+data:[
+{
+name:'北京百度科技不一样啊'
+},
+{
+name:'北京小米科技1'
+},
+{
+name:'北京网易科技'
+}
+]
+}
+],
+data:[
+{
+key:'A',
+data:[
+{
+name:'北京百度科技不一样啊'
+},
+{
+name:'北京小米科技1'
+},
+{
+name:'北京网易科技'
+}
+]
+},
+{
+key:'B',
+data:[
+{
+name:'成都开心麻花文化传媒有限公司'
+},
+{
+name:'成都高新投资集团有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+}
+]
+},
+{
+key:'C',
+data:[
+{
+name:'成都开心麻花文化传媒有限公司'
+},
+{
+name:'成都高新投资集团有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+},
+{
+name:'东方希望农业科技1有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+}
+]
+},
+{
+key:'D',
+data:[
+{
+name:'成都开心麻花文化传媒有限公司'
+},
+{
+name:'成都高新投资集团有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+},
+{
+name:'东方希望农业科技1有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+}
+]
+},
+{
+key:'E',
+data:[
+{
+name:'成都开心麻花文化传媒有限公司'
+},
+{
+name:'成都高新投资集团有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+},
+{
+name:'东方希望农业科技1有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+}
+]
+},
+{
+key:'F',
+data:[
+{
+name:'成都开心麻花文化传媒有限公司'
+},
+{
+name:'成都高新投资集团有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+},
+{
+name:'东方希望农业科技1有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+}
+]
+},
+{
+key:'G',
+data:[
+{
+name:'成都开心麻花文化传媒有限公司'
+},
+{
+name:'成都高新投资集团有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+},
+{
+name:'东方希望农业科技1有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+}
+]
+},
+{
+key:'H',
+data:[
+{
+name:'成都开心麻花文化传媒有限公司'
+},
+{
+name:'成都高新投资集团有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+},
+{
+name:'东方希望农业科技1有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+}
+]
+},
+{
+key:'I',
+data:[
+{
+name:'成都开心麻花文化传媒有限公司'
+},
+{
+name:'成都高新投资集团有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+},
+{
+name:'东方希望农业科技1有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+}
+]
+},
+{
+key:'J',
+data:[
+{
+name:'成都开心麻花文化传媒有限公司'
+},
+{
+name:'成都高新投资集团有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+},
+{
+name:'东方希望农业科技1有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+}
+]
+},
+{
+key:'K',
+data:[
+{
+name:'成都开心麻花文化传媒有限公司'
+},
+{
+name:'成都高新投资集团有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+},
+{
+name:'东方希望农业科技1有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+}
+]
+},
+{
+key:'L',
+data:[
+{
+name:'成都开心麻花文化传媒有限公司'
+},
+{
+name:'成都高新投资集团有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+},
+{
+name:'东方希望农业科技1有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+}
+]
+},
+{
+key:'M',
+data:[
+{
+name:'成都开心麻花文化传媒有限公司'
+},
+{
+name:'成都高新投资集团有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+},
+{
+name:'东方希望农业科技1有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+}
+]
+},
+{
+key:'N',
+data:[
+{
+name:'成都开心麻花文化传媒有限公司'
+},
+{
+name:'成都高新投资集团有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+},
+{
+name:'东方希望农业科技1有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+}
+]
+},
+{
+key:'O',
+data:[
+{
+name:'成都开心麻花文化传媒有限公司'
+},
+{
+name:'成都高新投资集团有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+},
+{
+name:'东方希望农业科技1有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+}
+]
+},
+{
+key:'P',
+data:[
+{
+name:'成都开心麻花文化传媒有限公司'
+},
+{
+name:'成都高新投资集团有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+},
+{
+name:'东方希望农业科技1有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+}
+]
+},
+{
+key:'Q',
+data:[
+{
+name:'成都开心麻花文化传媒有限公司'
+},
+{
+name:'成都高新投资集团有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+},
+{
+name:'东方希望农业科技1有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+}
+]
+},
+{
+key:'R',
+data:[
+{
+name:'成都开心麻花文化传媒有限公司'
+},
+{
+name:'成都高新投资集团有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+},
+{
+name:'东方希望农业科技1有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+}
+]
+},
+{
+key:'S',
+data:[
+{
+name:'成都开心麻花文化传媒有限公司'
+},
+{
+name:'成都高新投资集团有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+},
+{
+name:'东方希望农业科技1有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+}
+]
+},
+{
+key:'T',
+data:[
+{
+name:'成都开心麻花文化传媒有限公司'
+},
+{
+name:'成都高新投资集团有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+},
+{
+name:'东方希望农业科技1有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+}
+]
+},
+{
+key:'U',
+data:[
+{
+name:'成都开心麻花文化传媒有限公司'
+},
+{
+name:'成都高新投资集团有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+},
+{
+name:'东方希望农业科技1有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+}
+]
+},
+{
+key:'V',
+data:[
+{
+name:'成都开心麻花文化传媒有限公司'
+},
+{
+name:'成都高新投资集团有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+},
+{
+name:'东方希望农业科技1有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+}
+]
+},
+{
+key:'V',
+data:[
+{
+name:'成都开心麻花文化传媒有限公司'
+},
+{
+name:'成都高新投资集团有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+},
+{
+name:'东方希望农业科技1有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+}
+]
+},
+{
+key:'W',
+data:[
+{
+name:'成都开心麻花文化传媒有限公司'
+},
+{
+name:'成都高新投资集团有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+},
+{
+name:'东方希望农业科技1有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+}
+]
+},
+{
+key:'X',
+data:[
+{
+name:'成都开心麻花文化传媒有限公司'
+},
+{
+name:'成都高新投资集团有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+},
+{
+name:'东方希望农业科技1有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+}
+]
+},
+{
+key:'Y',
+data:[
+{
+name:'成都开心麻花文化传媒有限公司'
+},
+{
+name:'成都高新投资集团有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+},
+{
+name:'东方希望农业科技1有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+}
+]
+},
+{
+key:'Z',
+data:[
+{
+name:'成都开心麻花文化传媒有限公司'
+},
+{
+name:'成都高新投资集团有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+},
+{
+name:'东方希望农业科技1有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+},
+{
+name:'东方希望农业科技有限公司'
+}
+]
+}
+]
+};
+		function init(){		
+    		$SectionListContacts("LIST").setData(amVAR.data);		
+    	}
+    	function setData(){
+    		$SectionListContacts("LIST").setData(amVAR.newData);
+    	}
+let _amVAR = _.cloneDeep(amVAR)
+export default class App extends Component {
+constructor(props) {
+super(props);
+this.state= {};
+}
+observer() {
+const oMap = {};
+for (const pop in amVAR) {
+oMap[pop] = amVAR[pop];
+}
+this.setState(oMap, () => {
+amVAR = new ProxyFill(amVAR, (property, value) => {
+const key = property.split('.')[0];
+setTimeout(() => {
+this.setState({
+[key]: amVAR[key]
+});
+});
+});
+});
+}
+componentWillMount() {
+this.observer();
+$Page.willMount && $Page.willMount();
+}
+componentWillUnmount() {
+$Page.willUnmount && $Page.willUnmount();
+}
+componentDidMount(){
+window.onload&&window.onload();
+$Page.didMount &&$Page.didMount();
+}
+  render() {
+    return (
+<View style={{flex: 1}}>
+
+ <View style={{ marginTop : px2rn(20) , fontSize : px2rn(16) , fontWeight :"700"}}>
+  <Text style={{ fontSize : px2rn(16) , fontWeight :"700"}}>
+   SectionListContacts 通讯录
+  </Text>
+ </View>
+ <View style={{ marginTop : px2rn(20) , fontSize : px2rn(16) , fontWeight :"700", color :"blue"}}>
+  <Text style={{ fontSize : px2rn(16) , fontWeight :"700", color :"blue"}}>
+   内置方法:
+  </Text>
+ </View>
+ <View style={{ marginTop : px2rn(20) , fontSize : px2rn(16) }}>
+  <Text style={{ fontSize : px2rn(16) }}>
+   init方法->初始化
+  </Text>
+ </View>
+ <View>
+  <Text>
+   setData方法->赋值
+  </Text>
+ </View>
+ <SectionListContacts amtype="SectionListContacts" id="LIST" searchBtnStyles="background-color:green" isShowSearchCell="false" showAlphabet="true" letterViewStyle={{ backgroundColor :"rgba(0, 0, 0, 0.5)", overflow :"scroll"}} isAllowLowerCase="true" scrollAnimation="true" init={($event)=>init()} autoref="LIST" ref="_LIST" cell={(info)=><React.Fragment>
+ <View amtype="SectionListContacts.Cell"> 
+  <TouchView amtype="TouchView" style={{ display :"flex", height : px2rn(30) , paddingLeft : px2rn(20) , lineHeight : px2rn(30) , borderBottomWidth : px2rn(1) , borderBottomColor :"rgb(182, 182, 184)"}} click="click($event,info)" key="{key+index}" onClick={($event)=>click($event,info)}> 
+   <Text style={{ lineHeight : px2rn(30) }}>
+     {info&&info.name} 
+   </Text> 
+  </TouchView> 
+ </View>
+</React.Fragment>} renderHeader={(info)=><React.Fragment>
+ <View amtype="SectionListContacts.RenderHeader" style={{ backgroundColor :"rgb(182, 182, 184)"}}> 
+  <View style={{ height : px2rn(30) , marginLeft : px2rn(16) , justifyContent :"center"}}> 
+   <Text>
+     {info&&info.key} 
+   </Text> 
+  </View> 
+ </View>
+</React.Fragment>}></SectionListContacts>
+ <Button amtype="Button" type="primary" click="setData()" id="hide" text="setData方法" onClick={($event)=>setData()} ref="_hide" autoref="hide"></Button>
+   
+</View>);
+  }
+}
