@@ -1,0 +1,31 @@
+PODS:
+  - boost-for-react-native (1.63.0)
+  - DoubleConversion (1.1.5)
+  - Folly (2018.10.22.00):
+    - boost-for-react-native
+    - DoubleConversion
+    - glog
+  - glog (0.3.4)
+
+DEPENDENCIES:
+  - Folly (from `../node_modules/react-native/third-party-podspecs/Folly.podspec`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - boost-for-react-native
+    - DoubleConversion
+    - glog
+
+EXTERNAL SOURCES:
+  Folly:
+    :podspec: "../node_modules/react-native/third-party-podspecs/Folly.podspec"
+
+SPEC CHECKSUMS:
+  boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c
+  DoubleConversion: e22e0762848812a87afd67ffda3998d9ef29170c
+  Folly: de497beb10f102453a1afa9edbf8cf8a251890de
+  glog: 1de0bb937dccdc981596d3b5825ebfb765017ded
+
+PODFILE CHECKSUM: 567513bf3c348640f20fd6215570ccf06f28110e
+
+COCOAPODS: 1.7.5

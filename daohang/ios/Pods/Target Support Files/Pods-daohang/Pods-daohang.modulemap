@@ -1,0 +1,6 @@
+framework module Pods_daohang {
+  umbrella header "Pods-daohang-umbrella.h"
+
+  export *
+  module * { export * }
+}
