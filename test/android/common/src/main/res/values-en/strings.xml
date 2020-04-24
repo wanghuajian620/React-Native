@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="PermissionNoCameraUsageMessage">Get camera privileges</string>
+    <string name="ScanNoResultMessage">Two-Dimensional Code Recognition without Result</string>
+    <string name="ScanUserCancelledMessage">User Cancellation Recognition</string>
+    <string name="PermissionNoCalendarMessage">User Calendar Recognition</string>
+    <string name="CalendarAddFailed">Calendar Add Failed</string>
+    <string name="CalendarAddCallingFailed">Calendar Add Calling Failed</string>
+    <string name="CalendarAddSuccess">Calendar Add Success</string>
+    <string name="CalendarDeleteFailed">Calendar Delete Failed</string>
+    <string name="CalendarDeleteSuccess">Calendar Delete Success</string>
+    <string name="CalendarIdNotdfound">Calendar ID NotFound</string>"
+    <string name="CalendarNoID">No Calendar ID</string>
+    <string name="CalendarListFailed">Get Calendar Count Failed</string>
+    <string name="CalendarListSuccess">Get Calendar Count Success</string>
+    <string name="ParameterError">Entry Error </string>
+
+    <string name="exception_zip_error">file zip/unzip error</string>
+    <string name="exception_io">IO exception</string>
+    <string name="exception_connect_timeout">connect timeout exception</string>
+    <string name="exception_connect">network connect error</string>
+    <string name="exception_math">math error</string>
+    <string name="exception_array_out_of_bound">array out of bound exception</string>
+    <string name="exception_string_format">format string exception</string>
+    <string name="exception_class_not_found">can not foud class exception</string>
+    <string name="exception_database_error">database exception</string>
+    <string name="exception_null_point">null point exception</string>
+    <string name="exception_add_view">view add exception</string>
+    <string name="exception_activity_not_fount">activity not found exception</string>
+    <string name="exception_file_not_found">file not found exception</string>
+    <string name="exception_property_not_found">property not found exception</string>
+    <string name="exception_method_not_found">method not found exception</string>
+    <string name="exception_token_error">Token Invalid error</string>
+
+    <string name="KeyBoardNoValue">No Value</string>
+    <string name="CodeException">Catch error</string>
+    <string name="GoToTelPhoneSuccess">Go To Calling Success</string>
+    <string name="PermissionCallPhone">No Call Phone Permission</string>
+    <string name="PermissionSendSms">No Send SMS Permission</string>
+    <string name="MaillistGetFailed">Get Maillist Failed</string>
+    <string name="MaillistActivityNoExist">Activity Does Not Exist</string>
+    <string name="PermissiReadContacts">No Read Contacts Permission</string>
+
+    <string name="PermissionStatisticsMessage">Statistics unauthorized</string>
+    <string name="StatisticsSuccessMessage">Successful initialization of statistical plug-in</string>
+    <string name="StatisticsFailMessage">Initialization failure of statistical plug-in</string>
+    <string name="PermissionSignatureFailMessage">Signature unauthorized</string>
+    <string name="SignatureSuccess">Successful signature</string>
+    <string name="SignatureFail">Signature failure</string>
+
+
+    <string name="PermissionShareMessage">Sharing Unauthorized</string>
+    <string name="ShareQQSuccessMessage">QQ Sharing Success</string>
+    <string name="ShareQQFaildMessage">QQ Sharing Failure</string>
+    <string name="ShareQQCanceldMessage">QQ Sharing Canceled</string>
+    <string name="ShareQZoneSuccessMessage">QQ Space Sharing Success</string>
+    <string name="ShareQZoneFaildMessage">QQ Space Sharing Failure</string>
+    <string name="ShareWeChatSuccessMessage">Wechat Shares Success</string>
+    <string name="ShareWeChatFaildMessage">Wechat Shares Failure</string>
+    <string name="ShareWeChatCanceldMessage">Wechat Sharing Canceled</string>
+    <string name="ShareWeChatUnknownMessage">Wechat Sharing Unknown Errors</string>
+    <string name="ShareWeChatUnsupportedMessage">Wechat Sharing does not support</string>
+    <string name="ShareWeChatDeniedMessage">Wechat Sharing Rejected</string>
+    <string name="ShareWeChatCircleSuccessMessage">Wechat Friends Circle Shares Success</string>
+    <string name="ShareWeChatCircleFaildMessage">Wechat Friendship Circle Sharing Failure</string>
+    <string name="ShareSinaSuccessMessage">Sina Weibo Shares Success</string>
+    <string name="ShareSinaFaildMessage">Sina Weibo Sharing Failure</string>
+    <string name="ShareSinaCanceldMessage">Sina Weibo Sharing Canceled</string>
+
+    <string name="LocationFailed">Location failed</string>
+    <string name="PermissionLocation">Permission Location not exist</string>
+    <string name="PermissionLicationGps">Please Setting Gps</string>
+    <string name="PermissionLocationInternet">Please Check Internet</string>
+
+    <string name="PermissionGetDevice">Read Device Information Not Authorize</string>
+    <string name="RecordFileNotExist">Audio Information Does Not Exist </string>
+    <string name="PermissiRecordAudio">Audio Recording Rights Are Not Authorize</string>
+    <string name="RecordFailed">Audio Recording Failed</string>
+    <string name="RecordioInitSuccess">Audio Recording Init Success</string>
+    <string name="RecordioNotInit">Audio Recording Not Init</string>
+    <string name="RecordioStart">Audio Recording Start</string>
+    <string name="RecordioStop">Audio Recording Stop</string>
+    <string name="RecordioIng">Recordioing</string>
+    <string name="Recordioed">Not In The Recording</string>
+    <string name="RecordioPlayFailed">Recording failed</string>
+    <string name="AudioProgressError">Audio progress error</string>
+
+    <string name="PwdSetSuccess">Gesture Password Setting Successfull </string>
+    <string name="PwdUnlockSuccess">Successful Unlocking of Gesture Passwor</string>
+
+    <string name="Success">Success</string>
+    <string name="ImagePathNonExistMessage">Picture path does not exist</string>
+    <string name="UrlNonOpenMessage">URL cannot be opened</string>
+    <string name="CodeCancle">Cancle</string>
+    <string name="PermissiBluetooth">Bluetooth unauthorized</string>
+    <string name="BluetoothSendDataSuccess">Bluetooth Sends Data Successfull</string>
+    <string name="BluetoothVersionNotSupporte">System version is not supporte</string>
+    <string name="BluetoothNoServiceid">No peripheral Service ID Or Peripheral Service Feature I </string>
+    <string name="BluetoothDisconnected">Bluetooth Disconnected Peripheral</string>
+    <string name="BluetoothUninitialized">Bluetooth Uninitialized</string>
+    <string name="BluetoothConnectioSuccess">Successful Disconnection Of Bluetooth Connectio</string>
+    <string name="BluetoothinitializSuccess">Bluetooth Initialization Successfully</string>
+    <string name="BluetoothinitializFailed">Bluetooth Initialization Failed</string>
+
+    <string name="DatabaseInitSuccess">Operation Succeeded</string>
+    <string name="DatabaseInitFailed">Operation Failed</string>
+    <string name="DatabaseQueryFailed">Information Query Failed</string>
+    <string name="YmocrPermission">OCR Unauthorized</string>
+
+    <string name="NotificationBadgeFaild">Set NotificationBadge Faild</string>
+    <string name="NotificationBadgeSuccess">Set NotificationBadge Success</string>
+    <string name="NotificationUpdataSuccess">Location Notification Updata Success</string>
+    <string name="NotificationUpdataFailed">Location Notification Updata Failed</string>
+    <string name="NotificationDeleteSuccess">Location Notification Delete Success</string>
+    <string name="NotificationDeleteFailed">Location Notification Delete Failed</string>
+    <string name="NotificationQueryFailed">Location Notification Query Failed</string>
+
+    <string name="NetworkConnectErr">Network Connection Abnormal, Please Check Network Setting</string>
+    <string name="NetworkInitSuccess">Successful Initialization Without Encryptio</string>
+    <string name="NetworkUnkonwEncryptType">Unknow Encrypt Type</string>
+    <string name="NetworkDataCorrupted">Inconsistent Signatures And Tampered Dat</string>
+    <string name="NetworkUploadSuccess">File Upload Success</string>
+    <string name="NetworkUploadFailed">File Upload Failed</string>
+    <string name="NetworkUploadPermission">File Upload Permission Group Not Authorize</string>
+    <string name="NetworkDownloadFailed">Download Failed</string>
+    <string name="NetworkDownloadFailedException">Get DownFileType Failed</string>
+    <string name="NetworkDataUnzipFailed">Packet Decompression Failur</string>
+    <string name="NetworkDataUnDencrtyFailed">Message Decryption Failed</string>
+
+    <string name="WebviewOpenFailed">Webview Open Failed</string>
+    <string name="StatisticsSuccess">Statistics Success</string>
+</resources>

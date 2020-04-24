@@ -1,0 +1,19 @@
+{
+  "resultCode": "0",
+  "result": {
+    "ItmWklyQryInfArry": [
+      {
+        "PrjNo1": "1",
+        "PrjNmS": "综合管理平台维护升级31",
+        "EndDtTm": "20191206",
+        "WklyID": "1-B"
+      },
+      {
+        "PrjNo1": "2",
+        "PrjNmS": "综合管理平台维护升级32",
+        "EndDtTm": "20191207",
+        "WklyID": "2-B"
+      }
+    ]
+  }
+}

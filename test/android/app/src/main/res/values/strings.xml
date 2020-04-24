@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_act" translatable="false">您的界面被覆盖，请确认环境是否安全</string>
+    <string name="app_root" translatable="false">您的设备已root，运行该程序存在安全风险</string>
+    <string name="app_notdevice" translatable="false">设备为模拟器，存在安全风险</string>
+    <string name="txt_select" translatable="false">请选择调试方式</string>
+    <string name="txt_selecttextway" translatable="false">欢迎使用兴业银行</string>
+    <string name="txt_selecttextway2" translatable="false">移动开发平台调试基座</string>
+    <string name="txt_usbtest" translatable="false">USB调试</string>
+    <string name="txt_wifitest" translatable="false">Wifi调试</string>
+    <string name="txt_ddpush" translatable="false">ddpush端口配置</string>
+    <string name="txt_sure" translatable="false">确定</string>
+</resources>

@@ -1,0 +1,319 @@
+/* 
+  Localizable_EN.strings
+  ReactNativeWork
+
+  Created by Elvis on 2019/5/23.
+  Copyright © 2019 Facebook. All rights reserved.
+*/
+
+/** 基座 */
+"IPAddressAndPortIncorrect" = "IP address and port is incorrect.";
+"ThisDeviceIsJailbreak" = "This device is already jailbreak";
+"NotificationRegisterSuccess" = "APNs register success";
+"NotificationRegisterFaild" = "APNs register faild";
+"AppVersion" = "Version";
+"BuildVersion" = "Build";
+"USBDebug" = "USB Debug";
+"WiFiDebug" = "WIFI Debug";
+"AppConfig" = "App Config";
+"ChooseDebugMode" = "Choose Debug Mode";
+"BaseWelcomeString" = "Welcome to use CIB CAP4M\n Mobile development platform base";
+"IPAddress:" = "IP:";
+"Port:" = "Port:";
+
+/** 全局通用 */
+"OK" = "OK";
+"Back" = "Back";
+"Cancel" = "Cancel";
+"Confirm" = "Confirm";
+"Delete" = "Delete";
+"Success" = "Success";
+"Faild" = "Faild";
+"Prompt" = "Prompt";
+"UnknownError" = "Unknow Error";
+"Quit" = "Quit";
+
+/** 权限相关 */
+"NoPermissionPromptTitle" = "No Permissions";
+"NoPhotosPermissionPrompt" = "Please go to Settings -> Privacy to open Photos Permission of This Program.";
+"NoCameraPermissionPrompt" = "Please go to Settings -> Privacy to open Camera Permission of This Program.";
+"NoLocationPermissionPrompt" = "Please go to Settings -> Privacy to open Location Permission of This Program.";
+"NoContactsPermissionPrompt" = "Please go to Settings -> Privacy to open Contacts Permission of This Program.";
+"NoCalendarPermissionPrompt" = "Please go to Settings -> Privacy to open Calendar Permission of This Program.";
+"NoAudioPermissionPrompt" = "Please go to Settings -> Privacy to open Audio Permission of This Program.";
+
+/** ScanViewController */
+"ScanCodePrompt" = "Please put the Bar Code/QR code in the box \n Waiting for the system to automatically recognize";
+"ScanQRCodeOrBarCode" = "Scan QR Code/Bar Code";
+"ScanViewPhotos" = "Photos";
+"ScanViewStartringCamera" = "Camera startup";
+
+/** 原生组件 */
+/** 原生组件通用 */
+"ParametersCannotBeNull" = "Parameters cannot be null";
+"ParametersFormatError" = "Parameters format error";
+"CallbackError" = "Callback Error";
+
+/** ScanPlugin */
+"CalledScanQRCodeFunction" = "Called scan QR Code function";
+"UserCancelled" = "User cancelled";
+"NoScanResult" = "No scan result";
+"ScanViewOpened" = "Scan QR Code view opened";
+
+/** MailList */
+"CalledOpenContactsFunction" = "Called open contacts function";
+"ContactsHaveNoAccess" = "Contacts have no access";
+
+/** Location */
+"CalledLocationInformationFunction" = "Called location information function";
+"LocationNotTurnOn" = "User does not have locating enabled";
+"LocationHaveNoAccess" = "Location have no access";
+"LocationFailed" = "Location Failed";
+"LocationNoData" = "Not obtain location data";
+
+/** WebView */
+"CalledOpenWebViewFunction" = "Called open webview function";
+"WebViewOpenFaild" = "The safari open faild";
+
+/** Device */
+"CalledDeviceNameFunction" = "Called device name function";
+"CalledSystemVersionFunction" = "Called system version function";
+"CalledDevicePixelFunction" = "Called device pixel function";
+
+/** Contact */
+"CalledPhoneCallFunction" = "Called phone call function";
+"PhoneNumberIncorrect" = "Please input correct phone number";
+"ContactPhoneCallFaild" = "Call Faild";
+"CalledMessageFunction" = "Called message function";
+"MessageSendSucceed" = "Message sent";
+"MessageSendCancelled" = "Message send faild";
+"MessageSendFaild" = "Message send faild";
+"CanNotSendMessage" = "This device could not send messages";
+"CalledEMailFunction" = "Called e-mail function";
+"EMailSendSucceed" = "E-Mail sent";
+"EMailSendCancelled" = "E-Mail cancelled";
+"EMailSendFaild" = "E-Mail send faild";
+"EMailSaveDraft" = "E-mail save draft";
+"CanNotSendEMail" = "This device could not send e-mail";
+
+/** Calendar */
+"CalledAddCalendarFunction" = "Called add calendar function";
+"CalledCheckCalendarFunction" = "Called check calendar function";
+"CalledRemoveCalendarFunction" = "Called remove calendar function";
+"CalendarEventNotFound" = "Event not found";
+
+/** Media */
+"CalledRecordAudioFunction" = "Called record audio function";
+"CalledPlayAudioFunction" = "Called play audio function";
+"AudioFileNotFound" = "Audio file not found";
+"AudioBegin" = "Begin record";
+"AudioPause" = "Pause record";
+"AudioFinish" = "Stop record";
+"AudioUserCancel" = "User Cancelled";
+"AudioPlayFinished" = "Play finished";
+"InitAudioViewFaild" = "Record view init faild";
+"ClickButtonAudioBegin" = "Press button to start recording";
+
+"CalledPhotosOpenFunction" = "Called open photos function";
+"CalledPhotosSaveFunction" = "Called save photos function";
+"CalledPhotosCropFunction" = "Called crop photos function";
+"CalledPhotosCompressFunction" = "Called compress photos function";
+"PhotosSaveFaild" = "保存相册失败";
+"PhotosSaveSuccess" = "保存相册成功";
+
+"CalledVideoPlayFunction" = "Called video play function";
+"VideoDoesNotExist" = "Video does not exists at path";
+
+"CalledTakePictureFunction" = "Called take picture function";
+"CalledRecordVideoFunction" = "Called record video function";
+"SaveToApplicationFaild" = "Save picture faild";
+"CameraUserCancelled" = "User cancelled";
+
+"CalledWatermarkFunction" = "Called watermark function";
+"AddWatermarkFaild" = "Add watermark faild";
+
+/** FileManager */
+"CalledFileExistsFunction" = "Called file exists function";
+"CalledGetFileInfoFunction" = "Called get file information function";
+"CalledGetAbsolutePathFunction" = "Called get absolute path function";
+"CalledDirectoryExistsFunction" = "Called directory exists function";
+"CalledCreateDirectoryFunction" = "Called create directory function";
+"CalledGetDirectorySubpathsFunction" = "Called get subpaths function";
+"CalledDeleteDirectoryFunction" = "Called delete directory function";
+"CalledSaveFileFunction" = "Called save file function";
+"CalledReadFileFunction" = "Called read file function";
+"CalledCopyFileFunction" = "Called copy file function";
+"CalledDeleteFileFunction" = "Called delete file function";
+"CalledCutFileFunction" = "Called cut file function";
+"CalledSaveDefaultsFunction" = "Called save user defaults function";
+"CalledGetDefaultsFunction" = "Called save get defaults function";
+"CalledRemoveDefaultsFunction" = "Called save delete defaults function";
+"CalledDecompressionFunction" = "Called decompression function";
+"CalledCompressFunction" = "Called compress function";
+
+/** FileOperationTool */
+"File" = "File";
+"FileAlreadyExistAtPath" = "File already exists at path";
+"FileDoesNotExistAtPath" = "File does not exists at path";
+"FileSavedSuccess" = "File saved success";
+"FileSavedFaild" = "File saved faild";
+"FileCopiedSuccess" = "File copied success";
+"FileCopiedFaild" = "File copied faild";
+"FileCutSuccess" = "File cut success";
+"FileCutFaild" = "File cut faild";
+"FileDeletedSuccess" = "File deleted success";
+"FileDeletedFaild" = "File deleted faild";
+"FileReadSuccess" = "File read success";
+"FileReadFaild" = "File read faild";
+
+/** DirectoryOperationTool */
+"Directory" = "Directory";
+"DirectoryAlreadyExistAtPath" = "Directory already exists at path";
+"DirectoryDoesNotExistAtPath" = "Directory does not exists at path";
+"DirectoryCreateSuccess" = "Directory created success";
+"DirectoryCreateFaild" = "Directory created faild";
+"DirectoryDeletedSuccess" = "Directory deleted success";
+"DirectoryDeletedFaild" = "Directory deleted faild";
+"DirectoryIsEmpty" = "Directory is empty";
+
+/** ArchiverTool */
+"ArchiverSuccess" = "Archiver success";
+"ArchiverFaild" = "Archiver faild";
+"NoArchivedData" = "No archiver data";
+
+/** Compress */
+"CompressSuccess" = "Compress success";
+"DecompressionSuccess" = "Decompression success";
+"CompressFaild" = "Compress faild";
+"DecompressionFaild" = "Decompression faild";
+
+/** UserDefaults */
+"UserDefaultsSaveSuccess" = "UserDefaults save success";
+"UserDefaultsSaveFaild" = "UserDefaults save faild";
+"UserDefaultsGetFaild" = "No UserDefaults data";
+"UserDefaultsDeleteSuccess" = "UserDefaults deleted success";
+"UserDefaultsDeleteFaild" = "UserDefaults deleted faild";
+
+/** Statistics */
+"CalledStatisticsInitFunction" = "Called statistics init function";
+"CalledStatisticsStartPageFunction" = "Called statistics start page function";
+"CalledStatisticsEndPageFunction" = "Called statistics end page function";
+"CalledStatisticsClickFunction" = "Called statistics click function";
+
+"InitStatisticsSuccess" = "Init statistics success";
+"BeginStatisticsSuccess" = "Begin statistics success";
+"EndStatisticsSuccess" = "End statistics success";
+"ClickEventStatisticsSuccess" = "Click event statistics success";
+
+/** Share */
+"CalledShareQQFunction" = "调起分享到QQ方法";
+"CalledShareQZoneFunction" = "调起分享到QQ空间方法";
+"CalledShareWeChatFunction" = "调起分享到微信好友方法";
+"CalledShareWeChatCircleFunction" = "调起分享到微信朋友圈方法";
+"CalledSinaFunction" = "调起分享到新浪微博方法";
+
+"ShareSuccess" = "Share success";
+"ShareFaild" = "Share faild";
+"WeChat" = "Wechat ";
+"WeChatCircle" = "Wechat Circle";
+"QQ" = "QQ ";
+"QZone" = "QZone ";
+"Sina" = "Sina Weibo ";
+
+/** Log */
+"CalledRecordJSLogFunction" = "Called record JS log function";
+"CalledUploadLogFunction" = "Called upload log function";
+"CalledDeleteLogFunction" = "Called delete log function";
+
+"UploadLogFileSuccess" = "Upload Log success";
+"UploadLogFileFaild" = "Upload Log faild";
+"DeleteLogFileSuccess" = "Delete Log succeed";
+"DeleteLogFileFaild" = "Delete Log faild";
+"RecordJSLogSuccess" = "Record JS log success";
+"RecordJSLogFaild" = "Record JS log faild";
+
+/** Keyboard */
+"CalledOpenKeyboardFunction" = "Called open keyboard function";
+
+/** PasswordLock */
+"CalledVerifyPasswordFunction" = "Called verify password function";
+"CalledSetPasswordFunction" = "Called set password function";
+
+/** Bluetooth */
+"CalledBluetoothInitFunction" = "Called bluetooth init function";
+"CalledBluetoothSendDataFunction" = "Called bluetooth send data function";
+"CalledBluetoothDisconnectFunction" = "Called bluetooth disconnect function";
+
+"BluetoothManagerStateUnknown" = "System bluetooth status unkonw";
+"BluetoothManagerStateResetting" = "System bluetooth status resetting";
+"BluetoothManagerStateUnsupported" = "System bluetooth status unsupported";
+"BluetoothManagerStateUnauthorized" = "System bluetooth status unauthorized";
+"BluetoothManagerStatePoweredOff" = "System bluetooth status powered off";
+"BluetoothManagerStatePoweredOn" = "System bluetooth status powered on";
+
+"BluetoothDisconnectSuccess" = "Bluetooth disconnect success";
+"BluetoothDisconnectFailure" = "Bluetooth disconnect failure";
+"BluetoothSendDataSuccess" = "Bluetooth send data success";
+"BluetoothSendDataFailure" = "Bluetooth send data failure";
+
+"BluetoothNoCharacteristicID" = "Can not get bluetooth characteristic ID";
+
+/** DataBase */
+"CalledExecuteUpdateFunction" = "Called exectue update function";
+"CalledExecuteQueryFunction" = "Called exectue query function";
+
+"DatabaseCreateSuccess" = "Create database success";
+"DatabaseCreateFailure" = "Create database faild";
+"DatabaseOpenSuccess" = "Open database success";
+"DatabaseOpenFailure" = "Open database faild";
+"DatabaseExecuteSuccess" = "Execute SQL success";
+"DatabaseExecuteFailure" = "Execute SQL faild";
+
+"PleaseUseExecuteQueryFunction" = "Please use 'querySQLite' function";
+"PleaseUseExecuteUpdateFunction" = "Please use 'execSQLite' function";
+
+/** Password Lock */
+"SetNewGesturePassword" = "Set new gesture password";
+"ConfirmNewGesturePassword" = "Please confirm new gesture password";
+"TwoGesturePasswordInconsistent" = "Gesture password inconsistent";
+"GesturePasswordSetSuccess" = "Gesture password set success";
+"SlideYourGesturePassword" = "Please slide your gesture password";
+"GesturePasswordError" = "gesture password incorrect";
+"GesturePasswordCorrect" = "gesture password correct";
+"SlideYourOldGesturePassword" = "Please slide your old gesture password";
+"OtherLoginWays" = "Other ways";
+"VerifyLoginPassword" = "Verify login password";
+"ForgetPassword" = "Forget password?";
+"Reset" = "Reset";
+"Close" = "Close";
+"SetGesturePassword" = "Set gesture password";
+"GestureUnlock" = "Gesture unlock";
+"VerifyGesturePassword" = "Verify gesture password";
+"ModifyGesturePassword" = "Modify gesture password";
+"PasswordIncorrectOneTimes" = "Password incorrect 1 times";
+"PasswordIncorrectTwoTimes" = "Password incorrect 2 times";
+"PasswordIncorrectThreeTimes" = "Password incorrect 3 times";
+"ConnectAtLeast4Points" = "Please connect at least 4 points";
+"ClickCloseButton" = "Cancel the current operation";
+
+/** Network */
+"NetworkCalledInitFunction" = "Called network init function";
+"NetworkCalledPostFunction" = "Called network post function";
+"NetworkCalledFileDownloadFunction" = "Called network file download function";
+"NetworkFileUploadFunction" = "Called network file upload function";
+"NetworkCalledStatusFunction" = "Called network status function";
+
+"NetworkNoInitRequired" = "No authentication channel is used, init is not required";
+"NetworkInitSuccess" = "Init succeed";
+"NetworkInitFaild" = "Init faild，please contact the administrator";
+
+"channelNumber" = "Channel Number";
+"interfaceUrl" = "Interface";
+"httpPort" = "Http port";
+"httpsPort" = "https port";
+"WXShareID" = "Wechat share ID";
+"WBShareKey" = "Sina share ID";
+"QQShareID" = "QQ share ID";
+"isCheckIntegrity" = "Check Integrity";
+"IndustrialBankHTTPChannel" = "Secret Channel";
+"HTTPChannel" = "HTTPS Setting";

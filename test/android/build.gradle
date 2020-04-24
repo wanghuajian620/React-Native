@@ -1,0 +1,116 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    //是否为基座，是为true
+    ext {
+        isJizuo = true
+        if (project.hasProperty('ISJIZUO')) {
+            isJizuo = Boolean.parseBoolean(ISJIZUO)
+        }
+        //修改compileSdkVersion并不会影响我们的我们生成的app在手机先的行为。最理想的情况就是把compileSdkVersion设置到最高。
+        globalCompileSdkVersion = 28
+        //构建工具的版本号是多少，规则是可以用高的构建工具来构建低版本Sdk的工程。使用build-tools目录中的最大版本号即可
+        globalBuildToolsVersion = '28.0.3'
+        //targetSdkVersion的设置主要是当系统版本高于设置的target的时候。然后targetSdkVersion最好和compileSdkVersion一样。
+        globalTargetSdkVersion = 28
+        //这个就是程序运行的最低的要求的Sdk版本号，在低于这个版本号的手机设备上无法安装。
+        globalMinSdkVersion = 19
+        //编译版本
+        glversionCode = 1
+
+        /*=================================常用的引用============================================*/
+        //supportLibVersion 的头数字是和targetSdkVersion 版本一样的。
+        androidDependencies = [
+                appcompat    :   "androidx.appcompat:appcompat:1.1.0",//本地修改的依赖
+                design          :   "com.google.android.material:material:1.0.0",//本地修改的依赖
+                annotations     :   "androidx.annotation:annotation:1.0.0",
+                swiperefreshlayout : "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0-alpha02"
+        ]
+
+        /*=================================module中公共用到的引用============================================*/
+        globalDependencies = [
+                //common依赖
+                rxjava2             : 'io.reactivex.rxjava2:rxjava:2.2.5',
+                fastjson            : 'com.alibaba:fastjson:1.2.60',
+                okhttp3             : 'com.squareup.okhttp3:okhttp:3.6.0',
+                okio                : 'com.squareup.okio:okio:1.13.0',
+                bctspjdk            : 'org.bouncycastle:bctsp-jdk16:1.46',
+                bcprovjdk           : 'org.bouncycastle:bcprov-jdk16:1.46',
+                commonscodec        : 'commons-codec:commons-codec:1.2',
+                sqlcipher           : 'net.zetetic:android-database-sqlcipher:3.5.7@aar',
+                unrar               : 'com.github.axet:java-unrar:1.7.0-8',//本地修改的依赖
+
+                eventbus            : 'org.greenrobot:eventbus:3.0.0',
+                reactnative         : 'com.facebook.react:react-native:+',
+                junit               : 'junit:junit:4.12',
+                //ddpush              : 'com.ddpush:ddpush:1.0.02',
+                netty               : 'io.netty:netty-all:4.1.16.Final',
+                crashreport         : 'com.tencent.bugly:crashreport:2.8.6.0@aar',
+                nativecrashreport   : 'com.tencent.bugly:nativecrashreport:3.6.0.1@aar',
+                multidex            : 'androidx.multidex:multidex:2.0.0@aar',//本地修改的依赖
+                javawriter          : 'com.squareup:javawriter:2.1.1',
+
+                //==================customization依赖
+                gson                : 'com.google.code.gson:gson:2.8.1',
+                identitycard        : 'com.idcard:identitycard:0.0.1',
+                yadrly              : 'com.idcard:yadrly:0.0.1',
+                vidcard             : 'com.idcard:vidcard:0.0.1',
+                greendao            : 'com.greendao:greendao:2.1.0',
+                memstate            : 'com.trustmobi.mdmcheckdemo:memstate:1.4',
+                //=================filemanager依赖
+                un7zip              : 'com.hzy:un7zip:1.0.0@aar',
+                //=================media依赖
+                aspectjrt           : 'org.aspectj:aspectjrt:1.7.3',
+                isoparser           : 'com.googlecode.mp4parser:isoparser:1.0.6',
+                smallvideorecord    : 'com.mabeijianxi:small-video-record:1.2.0@aar',
+                //=================map依赖
+                navi3dmap           : 'com.amap.api:navi-3dmap:6.5.0_3dmap6.5.0',
+                location            : 'com.amap.api:location:4.4.0',
+                search              : 'com.amap.api:search:6.5.0.1',
+
+                stethookhttp3       : 'com.facebook.stetho:stetho-okhttp3:1.3.1',
+
+                picasso             : 'com.squareup.picasso:picasso:2.4.0',
+//                ums                 : 'com.ums:ums:0.0.1',
+                //share               : 'com.tencent.mm.opensdk:share:0.0.1',
+                wechatsdk           : 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:+',//com.tencent.mm.opensdk:wechat-sdk-android-with-mta:5.4.0',
+                weibosdk            : 'com.sina.weibo.sdk:core:4.4.3:openDefaultRelease@aar',
+                pdfviewpager        : 'es.voghdev.pdfviewpager:library:1.0.6@aar',
+                //=================scanplugin依赖
+                zxingcore           : 'com.google.zxing:core:3.3.0',
+                zxingandroidcore    : 'com.google.zxing:android-core:3.3.0',
+
+                localbroadcastmanager : 'androidx.localbroadcastmanager:localbroadcastmanager:1.0.0'
+        ]
+    }
+    repositories {
+        google()
+        jcenter()
+        maven { url "https://dl.bintray.com/thelasterstar/maven/" }
+    }
+    dependencies {
+        classpath("com.android.tools.build:gradle:3.4.2")
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+        mavenLocal()
+        maven {
+            // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
+            url("$rootDir/../node_modules/react-native/android")
+        }
+        maven {
+            // Android JSC is installed from npm
+            url("$rootDir/../node_modules/jsc-android/dist")
+        }
+
+        google()
+        maven { url 'https://jitpack.io' }
+        maven { url "https://dl.bintray.com/thelasterstar/maven/" }
+    }
+}

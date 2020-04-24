@@ -1,0 +1,174 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.cib.android"
+    version="1.0.0">
+    <name>MyApp</name>
+    <description>
+        A sample Apache Cordova application that responds to the deviceready event.
+    </description>
+    <author
+        email="dev@cordova.apache.org"
+        href="http://cordova.io">
+        Apache Cordova Team
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <allow-intent href="market:*" />
+    <preference
+        name="loglevel"
+        value="DEBUG" />
+<!--    <feature name="XZHPlugin">  xmlns="http://www.w3.org/ns/widgets"-->
+<!--        <param-->
+<!--            name="android-package"-->
+<!--            value="com.cib.android.xzhplugin.XZHPlugin" />-->
+<!--    </feature>-->
+    <feature name="Media">
+        <param
+            name="android-package"
+            value="com.android.react_native_media.Media" />
+    </feature>
+    <feature name="Calendar">
+        <param
+            name="android-package"
+            value="com.android.react_native_calendar.CordovaCalendar" />
+    </feature>
+    <feature name="Webview">
+        <param
+            name="android-package"
+            value="com.android.react_native_webview.Webview" />
+    </feature>
+    <feature name="PhotosManage">
+        <param
+            name="android-package"
+            value="com.android.react_native_photosmanage.PhotosManage" />
+    </feature>
+    <feature name="MediaPlay">
+        <param
+            name="android-package"
+            value="com.android.react_native_mediaplay.MediaPlay" />
+    </feature>
+    <feature name="MediaModule">
+        <param
+            name="android-package"
+            value="com.android.react_native_mediamodule.WaterMark" />
+    </feature>
+    <feature name="SharePlugin">
+        <param
+            name="android-package"
+            value="com.android.react_native_shareplugin.SharePlugin" />
+    </feature>
+    <feature name="MailList">
+        <param
+            name="android-package"
+            value="com.android.react_native_maillist.MailList" />
+    </feature>
+    <feature name="FileManager">
+        <param
+            name="android-package"
+            value="com.cib.react_native_filemanager.FileManager" />
+    </feature>
+    <feature name="Contact">
+        <param
+            name="android-package"
+            value="com.android.react_native_contact.Contact" />
+    </feature>
+    <feature name="DataBasePlugin">
+        <param
+            name="android-package"
+            value="com.cib.react_native_databaseplugin.DataBasePlugin" />
+    </feature>
+    <feature name="KeyboardPlugin">
+        <param
+            name="android-package"
+            value="com.cib.react_native_keyborad.KeyboardPlugin" />
+    </feature>
+    <feature name="SignaturePlugin">
+        <param
+            name="android-package"
+            value="com.android.signatureplugin.SignaturePlugin" />
+    </feature>
+    <feature name="Statistics">
+        <param
+            name="android-package"
+            value="com.android.react_native_statistics.Statistics" />
+    </feature>
+    <feature name="ScanPlugin">
+        <param
+            name="android-package"
+            value="com.cib.react_native_qrcode.ScanPlugin" />
+    </feature>
+    <feature name="PwdLockPlugin">
+        <param
+            name="android-package"
+            value="com.cib.react_native_pwdsafe.PwdLockPlugin" />
+    </feature>
+    <feature name="RecordAudio">
+        <param
+            name="android-package"
+            value="com.cib.react_native_recordaudio.RecordAudio" />
+    </feature>
+    <feature name="BlueToothPlugin">
+        <param
+            name="android-package"
+            value="com.android.react_native_bluetoothplugin.BlueToothPlugin" />
+    </feature>
+    <feature name="Notification">
+        <param
+            name="android-package"
+            value="com.android.react_native_notification.Notification" />
+    </feature>
+    <feature name="LocationPlugin">
+        <param
+            name="android-package"
+            value="com.android.react_native_locationplugin.LocationPlugin" />
+    </feature>
+    <feature name="NetWorkPlugin">
+        <param
+            name="android-package"
+            value="com.android.react_native_networkplugin.NetWorkPlugin" />
+    </feature>
+    <feature name="OCRPlugin">
+        <param
+            name="android-package"
+            value="com.android.react_native_ymocrplugin.OCRPlugin" />
+    </feature>
+    <!--<feature name="Whitelist">-->
+    <!--<param name="android-package" value="cn.com.agree.modulecordova.whitelistPugin.WhitelistPlugin" />-->
+    <!--<param name="onload" value="true" />-->
+    <!--</feature>-->
+    <!--<feature name="DevicePlugin">-->
+    <!--<param name="android-package" value="cn.com.agree.modulecordova.device.DevicePlugin" />-->
+    <!--</feature>-->
+    <!--<feature name="CallPhonePlugin">-->
+    <!--<param name="android-package" value="cn.com.agree.modulecordova.phone.CallPhonePlugin" />-->
+    <!--</feature>-->
+    <!--<feature name="PwdLockPlugin">-->
+    <!--<param name="android-package" value="cn.com.agree.modulecordova.pwdlockplugin.PwdLockPlugin" />-->
+    <!--</feature>-->
+    <!--<feature name="KeyboardPlugin">-->
+    <!--<param name="android-package" value="cn.com.agree.modulecordova.keyboard.KeyboardPlugin" />-->
+    <!--</feature>-->
+    <!--<feature name="FingerPrintPlugin">-->
+    <!--<param name="android-package" value="cn.com.agree.modulecordova.fingerPrint.FingerPrintPlugin" />-->
+    <!--</feature>-->
+    <!--<feature name="FilesPlugin">-->
+    <!--<param name="android-package" value="cn.com.agree.modulecordova.files.FilesPlugin" />-->
+    <!--</feature>-->
+    <!--<feature name="WebViewPlugin">-->
+    <!--<param name="android-package" value="cn.com.agree.modulecordova.webview.WebViewPlugin" />-->
+    <!--</feature>-->
+    <!--<feature name="MediaPlugin">-->
+    <!--<param name="android-package" value="cn.com.agree.modulecordova.media.MediaPlugin" />-->
+    <!--</feature>-->
+    <!--<feature name="ScanPlugin">-->
+    <!--<param name="android-package" value="cn.com.agree.modulecordova.scanplugin.ScanPlugin" />-->
+    <!--</feature>-->
+    <!--<feature name="FilePlugin">-->
+    <!--<param name="android-package" value="cn.com.agree.modulecordova.file.FilePlugin" />-->
+    <!--</feature>-->
+</widget>

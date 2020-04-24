@@ -1,0 +1,580 @@
+apply plugin: "com.android.application"
+
+import com.android.build.OutputFile
+
+/**
+ * The react.gradle file registers a task for each build variant (e.g. bundleDebugJsAndAssets
+ * and bundleReleaseJsAndAssets).
+ * These basically call `react-native bundle` with the correct arguments during the Android build
+ * cycle. By default, bundleDebugJsAndAssets is skipped, as in debug/dev mode we prefer to load the
+ * bundle directly from the development server. Below you can see all the possible configurations
+ * and their defaults. If you decide to add a configuration block, make sure to add it before the
+ * `apply from: "../../node_modules/react-native/react.gradle"` line.
+ *
+ * project.ext.react = [
+ *   // the name of the generated asset file containing your JS bundle
+ *   bundleAssetName: "index.android.bundle",
+ *
+ *   // the entry file for bundle generation
+ *   entryFile: "index.android.js",
+ *
+ *   // https://facebook.github.io/react-native/docs/performance#enable-the-ram-format
+ *   bundleCommand: "ram-bundle",
+ *
+ *   // whether to bundle JS and assets in debug mode
+ *   bundleInDebug: false,
+ *
+ *   // whether to bundle JS and assets in release mode
+ *   bundleInRelease: true,
+ *
+ *   // whether to bundle JS and assets in another build variant (if configured).
+ *   // See http://tools.android.com/tech-docs/new-build-system/user-guide#TOC-Build-Variants
+ *   // The configuration property can be in the following formats
+ *   //         'bundleIn${productFlavor}${buildType}'
+ *   //         'bundleIn${buildType}'
+ *   // bundleInFreeDebug: true,
+ *   // bundleInPaidRelease: true,
+ *   // bundleInBeta: true,
+ *
+ *   // whether to disable dev mode in custom build variants (by default only disabled in release)
+ *   // for example: to disable dev mode in the staging build type (if configured)
+ *   devDisabledInStaging: true,
+ *   // The configuration property can be in the following formats
+ *   //         'devDisabledIn${productFlavor}${buildType}'
+ *   //         'devDisabledIn${buildType}'
+ *
+ *   // the root of your project, i.e. where "package.json" lives
+ *   root: "../../",
+ *
+ *   // where to put the JS bundle asset in debug mode
+ *   jsBundleDirDebug: "$buildDir/intermediates/assets/debug",
+ *
+ *   // where to put the JS bundle asset in release mode
+ *   jsBundleDirRelease: "$buildDir/intermediates/assets/release",
+ *
+ *   // where to put drawable resources / React Native assets, e.g. the ones you use via
+ *   // require('./image.png')), in debug mode
+ *   resourcesDirDebug: "$buildDir/intermediates/res/merged/debug",
+ *
+ *   // where to put drawable resources / React Native assets, e.g. the ones you use via
+ *   // require('./image.png')), in release mode
+ *   resourcesDirRelease: "$buildDir/intermediates/res/merged/release",
+ *
+ *   // by default the gradle tasks are skipped if none of the JS files or assets change; this means
+ *   // that we don't look at files in android/ or ios/ to determine whether the tasks are up to
+ *   // date; if you have any other folders that you want to ignore for performance reasons (gradle
+ *   // indexes the entire tree), add them here. Alternatively, if you have JS files in android/
+ *   // for example, you might want to remove it from here.
+ *   inputExcludes: ["android/**", "ios/**"],
+ *
+ *   // override which node gets called and with what additional arguments
+ *   nodeExecutableAndArgs: ["node"],
+ *
+ *   // supply additional arguments to the packager
+ *   extraPackagerArgs: []
+ * ]
+ */
+
+project.ext.react = [
+    entryFile: "index.js",
+    enableHermes: false,  // clean and rebuild if changing
+]
+
+//为了减少打包时再次进行生成bundle的操作，减少ide打包的时间给注释掉
+//apply from: "../../node_modules/react-native/react.gradle"
+
+/**
+ * Set this to true to create two separate APKs instead of one:
+ *   - An APK that only works on ARM devices
+ *   - An APK that only works on x86 devices
+ * The advantage is the size of the APK is reduced by about 4MB.
+ * Upload all the APKs to the Play Store and people will download
+ * the correct one based on the CPU architecture of their device.
+ */
+def enableSeparateBuildPerCPUArchitecture = false
+
+/**
+ * Run Proguard to shrink the Java bytecode in release builds.
+ * 运行Proguard以缩小发布版本中的Java字节码。
+ */
+def enableProguardInReleaseBuilds = true
+
+/**
+ * The preferred build flavor of JavaScriptCore.
+ *
+ * For example, to use the international variant, you can use:
+ * `def jscFlavor = 'org.webkit:android-jsc-intl:+'`
+ *
+ * The international variant includes ICU i18n library and necessary data
+ * allowing to use e.g. `Date.toLocaleString` and `String.localeCompare` that
+ * give correct results when using with locales other than en-US.  Note that
+ * this variant is about 6MiB larger per architecture than default.
+ */
+def jscFlavor = 'org.webkit:android-jsc:+'
+
+/**
+ * Whether to enable the Hermes VM.
+ *
+ * This should be set on project.ext.react and mirrored here.  If it is not set
+ * on project.ext.react, JavaScript will not be compiled to Hermes Bytecode
+ * and the benefits of using Hermes will therefore be sharply reduced.
+ */
+def enableHermes = project.ext.react.get("enableHermes", false);
+
+android {
+    compileSdkVersion rootProject.ext.globalCompileSdkVersion
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    sourceSets {
+        main {
+            if (rootProject.ext.isJizuo) {
+                println "isjizuo： " + rootProject.ext.isJizuo
+                manifest.srcFile 'src/main/AndroidManifest.xml'
+            } else {
+                println "isjizuo： " + rootProject.ext.isJizuo
+                manifest.srcFile 'src/main/release/AndroidManifest.xml'
+            }
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
+    defaultConfig {
+        multiDexEnabled true
+        //最小支持的sdk版本
+        minSdkVersion rootProject.ext.globalMinSdkVersion
+        //targetSdkVersion 是 Android 提供向前兼容的主要依据
+        targetSdkVersion rootProject.ext.globalTargetSdkVersion
+
+        if (project.hasProperty('APP_KEY_PARA')) {
+            applicationId APP_KEY_PARA
+            println "应用id： " + APP_KEY_PARA
+        } else {
+            applicationId "com.rnproject"
+        }
+        if (project.hasProperty('VERSION_NAME_PARA')) {
+            versionName VERSION_NAME_PARA
+            println "应用版本： " + VERSION_NAME_PARA
+        } else {
+            versionName "1.8.0"
+        }
+        if (project.hasProperty('APP_NAME_PARA')) {
+            resValue "string", "app_name", APP_NAME_PARA
+            println "应用名称： " + APP_NAME_PARA
+        } else {
+            resValue "string", "app_name", "CAP4M调试基座"
+            println "应用名称： " + "Cap4m调试基座"
+        }
+
+        if(project.hasProperty("BUILDVERSION")){
+            versionCode BUILDVERSION
+            println "versionCode： " + BUILDVERSION
+        }else {
+            versionCode rootProject.ext.glversionCode
+        }
+    }
+    splits {
+        abi {
+            reset()
+            enable enableSeparateBuildPerCPUArchitecture
+            universalApk false  // If true, also generate a universal APK
+            include "armeabi-v7a", "x86", "arm64-v8a", "x86_64"
+        }
+    }
+
+    signingConfigs {
+        debug {
+            storeFile file('debug.keystore')
+            storePassword 'android'
+            keyAlias 'androiddebugkey'
+            keyPassword 'android'
+        }
+    }
+    buildTypes {
+        debug {
+            signingConfig signingConfigs.debug
+
+            buildConfigField "boolean", "isjizuo", "true"
+
+            def MapKeytemp, QQShareIDtemp
+            if (project.hasProperty("MapKey")) {
+                println "MapKey： " + MapKey
+                MapKeytemp = "\"" + MapKey + "\""
+                buildConfigField "String", "MapKey", MapKeytemp
+            } else {
+                MapKeytemp = "eea8919ee1186cbabf4dfc7ff517ac04"
+                buildConfigField "String", "MapKey", '"eea8919ee1186cbabf4dfc7ff517ac04"'
+            }
+
+            if (project.hasProperty("QQShareID")) {
+                println "QQShareID： " + QQShareID
+                QQShareIDtemp = "\"" + "tencent" + QQShareID + "\""
+                manifestPlaceholders = [QQShareID: QQShareIDtemp,
+                                        MapKey   : MapKeytemp]
+                buildConfigField "String", "QQShareID", QQShareID
+            } else {
+                QQShareIDtemp = "tencent1107923792"
+                manifestPlaceholders = [QQShareID: QQShareIDtemp,
+                                        MapKey   : MapKeytemp]
+                buildConfigField "String", "QQShareID", '"101814090"'
+            }
+
+            if (project.hasProperty("WXShareID")) {
+                println "WXShareID： " + WXShareID
+                def temp = "\"" + WXShareID + "\""
+                buildConfigField "String", "WXShareID", temp
+            } else {
+                buildConfigField "String", "WXShareID", '"wx3f32af5f32318b1e"'
+            }
+
+            if (project.hasProperty("WBShareKey")) {
+                println "WBShareKey： " + WBShareKey
+                def temp = "\"" + WBShareKey + "\""
+                buildConfigField "String", "WBShareKey", temp
+            } else {
+                buildConfigField "String", "WBShareKey", '"1495691434"'
+            }
+
+            if (project.hasProperty("channelNumber")) {
+                println "渠道编号： " + channelNumber
+                def temp = "\"" + channelNumber + "\""
+                buildConfigField "String", "channelNumber", temp
+            } else {
+                println "渠道编号：为空 "
+                buildConfigField "String", "channelNumber", '"4ecd64e647b44c108281249e573a7f46"'
+            }
+
+            if (project.hasProperty("interfaceUrl")) {
+                println "服务端地址： " + interfaceUrl
+                def temp = "\"" + interfaceUrl + "\""
+                buildConfigField "String", "interfaceUrl", temp
+            } else {
+                println "服务端地址：为空 "
+                buildConfigField "String", "interfaceUrl", '"192.168.1.169"'
+            }
+
+            if (project.hasProperty("httpPort")) {
+                println "服务端端口： " + httpPort
+                def temp = "\"" + httpPort + "\""
+                buildConfigField "String", "httpPort", temp
+            } else {
+                println "服务端端口：为空 "
+                buildConfigField "String", "httpPort", '"8080"'
+            }
+
+            if (project.hasProperty("httpsPort")) {
+                println "服务端https端口： " + httpsPort
+                def temp = "\"" + httpsPort + "\""
+                buildConfigField "String", "httpsPort", temp
+            } else {
+                println "服务端https端口：为空 "
+                buildConfigField "String", "httpsPort", '"8442"'
+            }
+
+            if (project.hasProperty("ddpushIP")) {
+                println "服务端https端口： " + ddpushIP
+                def temp = "\"" + ddpushIP + "\""
+                buildConfigField "String", "ddpushIP", temp
+            } else {
+                println "服务端https端口：为空 "
+                buildConfigField "String", "ddpushIP", '"192.168.1.168:9966"'
+            }
+
+            if (project.hasProperty("isCheckIntegrity") && isCheckIntegrity == "true") {
+                buildConfigField "boolean", "isCheckIntegrity", 'true'
+                println "是否启用hash校验 " + isCheckIntegrity
+            } else {
+                buildConfigField "boolean", "isCheckIntegrity", 'false'
+            }
+
+            if (project.hasProperty("isCanScreenshot") && isCanScreenshot == "true") {
+                buildConfigField "boolean", "isCanScreenshot", 'true'
+                println "是否启用防止截屏 " + isCheckIntegrity
+            } else {
+                buildConfigField "boolean", "isCanScreenshot", 'false'
+            }
+
+            buildConfigField "boolean", "isGetToken", "true"
+            buildConfigField "String", "satrtPage", '"satrtPage"'
+            buildConfigField "String", "startComponent", '"startComponent"'
+            buildConfigField "String", "resetSatrtPageKey", '"resetSatrtPageKey"'
+            buildConfigField "String", "resetStartComponentKey", '"resetStartComponentKey"'
+            buildConfigField "String", "serverAddress", '"serverAddress"'
+            buildConfigField "int", "serverPort", "1"
+            buildConfigField "String", "messageServerAddress", '"messageServerAddress"'
+            buildConfigField "int", "messageServerPort", "1"
+            buildConfigField "String", "IndustrialBankClientCertificate", '"IndustrialBankClientCertificate"'
+            buildConfigField "boolean", "isUseGzip", "false"
+            buildConfigField "String", "ClientCertificate", '"ClientCertificate"'
+            buildConfigField "String", "ClientCertificatePass", '"ClientCertificatePass"'
+            if (project.hasProperty("isUseIndustrialBankEncrypt") && isUseIndustrialBankEncrypt == "true") {
+                println "使用RAS证书，证书名称：" + IndustrialBankClientCertificate
+                buildConfigField "String", "isUseIndustrialBankEncrypt", '"true"'
+                def temp = "\"" + IndustrialBankClientCertificate + "\""
+                buildConfigField "String", "IndustrialBankClientCertificate", temp
+            } else {
+                println "不使用RAS证书 "
+                buildConfigField "String", "isUseIndustrialBankEncrypt", '"true"'
+            }
+            if (project.hasProperty("isUseHttps") && isUseHttps == "true") {
+                println "使用HTTPS证书，证书名称： " + ClientCertificate
+                buildConfigField "String", "isUseHttps", '"true"'
+                buildConfigField "boolean", "isUseGzip", isUseGzip
+                def temp = "\"" + ClientCertificate + "\""
+                buildConfigField "String", "ClientCertificate", temp
+                temp = "\"" + ClientCertificatePass + "\""
+                buildConfigField "String", "ClientCertificatePass", temp
+            } else {
+                println "不使用HTTPS证书 "
+                buildConfigField "String", "isUseHttps", '"false"'
+            }
+            if (project.hasProperty('STATE_BAR')) {
+                buildConfigField "boolean", "FULL_SCREEN", STATE_BAR
+                println "是否全屏显示 " + STATE_BAR
+            } else {
+                buildConfigField "boolean", "FULL_SCREEN", 'true'
+            }
+            if (project.hasProperty('SCREEN_TYPE')) {
+                if (SCREEN_TYPE == "landscape") {
+                    buildConfigField "String", "SCREEN_ORIENTATION", '"landscape"'
+                    println "屏幕设置：" + SCREEN_TYPE
+                } else if (SCREEN_TYPE == "portrait") {
+                    buildConfigField "String", "SCREEN_ORIENTATION", '"portrait"'
+                    println "屏幕设置：" + SCREEN_TYPE
+                } else if (SCREEN_TYPE == "unspecified") {
+                    buildConfigField "String", "SCREEN_ORIENTATION", '"unspecified"'
+                    println "屏幕设置：" + SCREEN_TYPE
+                }
+            } else {
+                buildConfigField "String", "SCREEN_ORIENTATION", '"unspecified"'
+            }
+            debuggable true
+            minifyEnabled false
+        }
+        release {
+            // Caution! In production, you need to generate your own keystore file.
+            // see https://facebook.github.io/react-native/docs/signed-apk-android.
+            signingConfig signingConfigs.debug
+
+            buildConfigField "boolean", "isjizuo", "false"
+            def MapKeytemp, QQShareIDtemp
+            if (project.hasProperty("MapKey")) {
+                println "MapKey： " + MapKey
+                MapKeytemp = "\"" + MapKey + "\""
+                buildConfigField "String", "MapKey", MapKeytemp
+            } else {
+                MapKeytemp = "eea8919ee1186cbabf4dfc7ff517ac04666"
+                buildConfigField "String", "MapKey", '"eea8919ee1186cbabf4dfc7ff517ac04666"'
+            }
+
+            if (project.hasProperty("QQShareID")) {
+                println "QQShareID： " + QQShareID
+                QQShareIDtemp = "\"" + "tencent" + QQShareID + "\""
+                manifestPlaceholders = [QQShareID: QQShareIDtemp,
+                                        MapKey   : MapKeytemp]
+                buildConfigField "String", "QQShareID", "\"" + QQShareID + "\""
+            } else {
+                QQShareIDtemp = "tencent1107923792"
+                manifestPlaceholders = [QQShareID: QQShareIDtemp,
+                                        MapKey   : MapKeytemp]
+                buildConfigField "String", "QQShareID", '"1107923792"'
+            }
+
+            if (project.hasProperty("WXShareID")) {
+                println "WXShareID： " + WXShareID
+                def temp = "\"" + WXShareID + "\""
+                buildConfigField "String", "WXShareID", temp
+            } else {
+                buildConfigField "String", "WXShareID", '"wx3f32af5f32318b1e"'
+            }
+
+            if (project.hasProperty("WBShareKey")) {
+                println "WBShareKey： " + WBShareKey
+                def temp = "\"" + WBShareKey + "\""
+                buildConfigField "String", "WBShareKey", temp
+            } else {
+                buildConfigField "String", "WBShareKey", '"1495691434"'
+            }
+
+            if (project.hasProperty("channelNumber")) {
+                println "渠道编号： " + channelNumber
+                def temp = "\"" + channelNumber + "\""
+                buildConfigField "String", "channelNumber", temp
+            } else {
+                println "渠道编号：为空 "
+                buildConfigField "String", "channelNumber", '""'
+            }
+
+            if (project.hasProperty("interfaceUrl")) {
+                println "服务端地址： " + interfaceUrl
+                def temp = "\"" + interfaceUrl + "\""
+                buildConfigField "String", "interfaceUrl", temp
+            } else {
+                println "服务端地址：为空 "
+                buildConfigField "String", "interfaceUrl", '"192.168.1.168"'
+            }
+
+            if (project.hasProperty("httpPort")) {
+                println "服务端端口： " + httpPort
+                def temp = "\"" + httpPort + "\""
+                buildConfigField "String", "httpPort", temp
+            } else {
+                println "服务端端口：为空 "
+                buildConfigField "String", "httpPort", '"8080"'
+            }
+
+
+            if (project.hasProperty("httpsPort")) {
+                println "服务端https端口： " + httpsPort
+                def temp = "\"" + httpsPort + "\""
+                buildConfigField "String", "httpsPort", temp
+            } else {
+                println "服务端https端口：为空 "
+                buildConfigField "String", "httpsPort", '"8442"'
+            }
+
+            if (project.hasProperty("ddpushIP")) {
+                println "服务端https端口： " + ddpushIP
+                def temp = "\"" + ddpushIP + "\""
+                buildConfigField "String", "ddpushIP", temp
+            } else {
+                println "服务端https端口：为空 "
+                buildConfigField "String", "ddpushIP", '"192.168.1.168:9966"'
+            }
+
+            if (project.hasProperty("isCheckIntegrity") && isCheckIntegrity == "true") {
+                buildConfigField "boolean", "isCheckIntegrity", 'true'
+                println "是否启用hash校验 " + isCheckIntegrity
+            } else {
+                buildConfigField "boolean", "isCheckIntegrity", 'false'
+            }
+
+            if (project.hasProperty("isCanScreenshot") && isCanScreenshot == "true") {
+                buildConfigField "boolean", "isCanScreenshot", 'true'
+                println "是否启用防止截屏 " + isCheckIntegrity
+            } else {
+                buildConfigField "boolean", "isCanScreenshot", 'false'
+            }
+
+            buildConfigField "boolean", "isGetToken", "true"
+            buildConfigField "String", "satrtPage", '"satrtPage"'
+            buildConfigField "String", "startComponent", '"startComponent"'
+            buildConfigField "String", "resetSatrtPageKey", '"resetSatrtPageKey"'
+            buildConfigField "String", "resetStartComponentKey", '"resetStartComponentKey"'
+            buildConfigField "String", "serverAddress", '"serverAddress"'
+            buildConfigField "int", "serverPort", "1"
+            buildConfigField "String", "messageServerAddress", '"messageServerAddress"'
+            buildConfigField "int", "messageServerPort", "1"
+            //buildConfigField "String", "SCREEN_ORIENTATION", '"portrait"'  //横屏
+            //add liudan todo
+            buildConfigField "String", "IndustrialBankClientCertificate", '"IndustrialBankClientCertificate"'
+            buildConfigField "boolean", "isUseGzip", "false"
+//            buildConfigField "String","isUseHttps","false"
+            buildConfigField "String", "ClientCertificate", '"ClientCertificate"'
+            buildConfigField "String", "ClientCertificatePass", '"ClientCertificatePass"'
+            if (project.hasProperty("isUseIndustrialBankEncrypt") && isUseIndustrialBankEncrypt == "true") {
+                println "使用RAS证书，证书名称：" + IndustrialBankClientCertificate
+                buildConfigField "String", "isUseIndustrialBankEncrypt", '"true"'
+                def temp = "\"" + IndustrialBankClientCertificate + "\""
+                buildConfigField "String", "IndustrialBankClientCertificate", temp
+            } else {
+                println "不使用RAS证书 "
+                buildConfigField "String", "isUseIndustrialBankEncrypt", '"false"'
+            }
+            if (project.hasProperty("isUseHttps") && isUseHttps == "true") {
+                println "使用HTTPS证书，证书名称： " + ClientCertificate
+                buildConfigField "String", "isUseHttps", '"true"'
+                buildConfigField "boolean", "isUseGzip", isUseGzip
+                def temp = "\"" + ClientCertificate + "\""
+                buildConfigField "String", "ClientCertificate", temp
+                temp = "\"" + ClientCertificatePass + "\""
+                buildConfigField "String", "ClientCertificatePass", temp
+            } else {
+                println "不使用HTTPS证书 "
+                buildConfigField "String", "isUseHttps", '"false"'
+            }
+            if (project.hasProperty('STATE_BAR')) {
+                buildConfigField "boolean", "FULL_SCREEN", STATE_BAR
+                println "是否全屏显示 " + STATE_BAR
+            } else {
+                buildConfigField "boolean", "FULL_SCREEN", 'true'
+            }
+            if (project.hasProperty('SCREEN_TYPE')) {
+                if (SCREEN_TYPE == "landscape") {
+                    buildConfigField "String", "SCREEN_ORIENTATION", '"landscape"'
+                    println "屏幕设置：" + SCREEN_TYPE
+                } else if (SCREEN_TYPE == "portrait") {
+                    buildConfigField "String", "SCREEN_ORIENTATION", '"portrait"'
+                    println "屏幕设置：" + SCREEN_TYPE
+                } else if (SCREEN_TYPE == "unspecified") {
+                    buildConfigField "String", "SCREEN_ORIENTATION", '"unspecified"'
+                    println "屏幕设置：" + SCREEN_TYPE
+                }
+            } else {
+                buildConfigField "String", "SCREEN_ORIENTATION", '"portrait"'
+            }
+
+            //运行Proguard以缩小发布版本中的Java字节码。
+            minifyEnabled enableProguardInReleaseBuilds
+            //移除无用的resource文件
+            shrinkResources false
+            proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+        }
+    }
+    // applicationVariants are e.g. debug, release
+    applicationVariants.all { variant ->
+        variant.outputs.each { output ->
+            // For each separate APK per architecture, set a unique version code as described here:
+            // https://developer.android.com/studio/build/configure-apk-splits.html
+            def versionCodes = ["armeabi-v7a": 1, "x86": 2, "arm64-v8a": 3, "x86_64": 4]
+            def abi = output.getFilter(OutputFile.ABI)
+            if (abi != null) {  // null for the universal-debug, universal-release variants
+                output.versionCodeOverride =
+                        versionCodes.get(abi) * 1048576 + defaultConfig.versionCode
+            }
+
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+//    implementation project(':react-native-linear-gradient')
+//    if (rootProject.ext.isJizuo){
+//        implementation project(':react-native-contact')
+//        implementation project(':react-native-photosmanage')
+//        implementation project(':react-native-notification')
+//        implementation project(':react-native-pwdlockplugin')
+//    }
+    implementation androidDependencies.appcompat
+    implementation androidDependencies.swiperefreshlayout
+    implementation globalDependencies.reactnative
+    implementation globalDependencies.multidex
+    implementation globalDependencies.commonscodec
+
+    // From node_modules
+    if (enableHermes) {
+        def hermesPath = "../../node_modules/hermes-engine/android/";
+        debugImplementation files(hermesPath + "hermes-debug.aar")
+        releaseImplementation files(hermesPath + "hermes-release.aar")
+    } else {
+        implementation jscFlavor
+    }
+
+    implementation globalDependencies.bcprovjdk
+    implementation files('libs/ddpush-1.0.02.jar')
+    implementation project(path: ':common')
+    implementation project(path: ':CordovaLib')
+}
+
+// Run this once to be able to run the application with BUCK
+// puts all compile dependencies into folder libs for BUCK to use
+task copyDownloadableDepsToLibs(type: Copy) {
+    from configurations.compile
+    into 'libs'
+}
+
+apply from: file("../../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesAppBuildGradle(project)

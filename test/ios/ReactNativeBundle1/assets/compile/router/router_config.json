@@ -1,0 +1,26 @@
+{
+  "routers": {
+    "HomeScreen": {
+      "screen": "index.html",
+      "componentName": "HomeScreen",
+      "navigationOptions": {
+        "headerShown": false
+      }
+    },
+    "DetailsScreen": {
+      "screen": "second.html",
+      "componentName": "DetailsScreen",
+      "navigationOptions": {
+        "headerShown": false
+      }
+    },
+    "Person": {
+      "screen": "second.html",
+      "componentName": "Person",
+      "navigationOptions": {
+        "headerShown": false
+      }
+    }
+  },
+  "initialRouteName": "HomeScreen"
+}

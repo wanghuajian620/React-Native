@@ -1,0 +1,41 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion rootProject.ext.globalCompileSdkVersion
+    buildToolsVersion rootProject.ext.globalBuildToolsVersion
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+    defaultConfig {
+        multiDexEnabled true
+        minSdkVersion rootProject.ext.globalMinSdkVersion
+        targetSdkVersion rootProject.ext.globalTargetSdkVersion
+    }
+
+}
+dependencies {
+    implementation androidDependencies.annotations
+    implementation globalDependencies.okhttp3
+    implementation globalDependencies.okio
+    implementation globalDependencies.fastjson
+    implementation globalDependencies.rxjava2
+    implementation globalDependencies.reactnative
+    //sm加密工具类-------
+    compileOnly globalDependencies.bctspjdk
+    compileOnly globalDependencies.bcprovjdk
+    compileOnly globalDependencies.commonscodec
+    //--------end------
+    //数据库相关------
+    implementation globalDependencies.sqlcipher
+    implementation project(path: ':CordovaLib')
+    //--------end----
+    compileOnly globalDependencies.unrar
+    //network
+    //compile 'com.google.code.gson:gson:2.8.1'
+}
